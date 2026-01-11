@@ -1,0 +1,261 @@
+[
+  {
+    "lessonNumber": 6,
+    "title": "Won't you go together?",
+    "titleJapanese": "いっしょに行きませんか",
+    "description": "Object marker を and invitations with ～ませんか",
+    "difficulty": 2,
+    "xpReward": 60,
+    "order": 6,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～を～ます",
+        "explanation": "Use を to mark the object of an action verb",
+        "examples": [
+          "にほんごをべんきょうします。(I study Japanese.)",
+          "コーヒーをのみます。(I drink coffee.)"
+        ]
+      },
+      {
+        "title": "～ませんか",
+        "explanation": "Use ～ませんか to make polite invitations",
+        "examples": [
+          "いっしょにいきませんか。(Won't you go together?)",
+          "えいがをみませんか。(Won't you watch a movie?)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "べんきょうします",
+        "hiragana": "べんきょうします",
+        "romaji": "benkyou shimasu",
+        "english": "to study",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "のみます",
+        "hiragana": "のみます",
+        "romaji": "nomimasu",
+        "english": "to drink",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "たべます",
+        "hiragana": "たべます",
+        "romaji": "tabemasu",
+        "english": "to eat",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "みます",
+        "hiragana": "みます",
+        "romaji": "mimasu",
+        "english": "to see, watch",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "いっしょに",
+        "hiragana": "いっしょに",
+        "romaji": "issho ni",
+        "english": "together",
+        "partOfSpeech": "adverb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 7,
+    "title": "How will you give it?",
+    "titleJapanese": "何であげますか",
+    "description": "Giving and receiving verbs",
+    "difficulty": 2,
+    "xpReward": 60,
+    "order": 7,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "あげます・もらいます・くれます",
+        "explanation": "Verbs for giving and receiving",
+        "examples": [
+          "ともだちにプレゼントをあげます。(I give a present to my friend.)",
+          "はははわたしにかさをくれました。(My mother gave me an umbrella.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "あげます",
+        "hiragana": "あげます",
+        "romaji": "agemasu",
+        "english": "to give",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "もらいます",
+        "hiragana": "もらいます",
+        "romaji": "moraimasu",
+        "english": "to receive",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "くれます",
+        "hiragana": "くれます",
+        "romaji": "kuremasu",
+        "english": "to give (to me)",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 8,
+    "title": "Maria is beautiful",
+    "titleJapanese": "マリアさんはきれいです",
+    "description": "i-adjectives and na-adjectives",
+    "difficulty": 2,
+    "xpReward": 60,
+    "order": 8,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "い-adjectives",
+        "explanation": "Adjectives ending in い",
+        "examples": [
+          "このほんはおもしろいです。(This book is interesting.)",
+          "へやはひろいです。(The room is spacious.)"
+        ]
+      },
+      {
+        "title": "な-adjectives",
+        "explanation": "Adjectives that need な before nouns",
+        "examples": [
+          "マリアさんはきれいです。(Maria is beautiful.)",
+          "しずかなへやです。(It's a quiet room.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "おおきい",
+        "hiragana": "おおきい",
+        "romaji": "ookii",
+        "english": "big",
+        "partOfSpeech": "i-adjective"
+      },
+      {
+        "japanese": "ちいさい",
+        "hiragana": "ちいさい",
+        "romaji": "chiisai",
+        "english": "small",
+        "partOfSpeech": "i-adjective"
+      },
+      {
+        "japanese": "きれい",
+        "hiragana": "きれい",
+        "romaji": "kirei",
+        "english": "beautiful, clean",
+        "partOfSpeech": "na-adjective"
+      },
+      {
+        "japanese": "しずか",
+        "hiragana": "しずか",
+        "romaji": "shizuka",
+        "english": "quiet",
+        "partOfSpeech": "na-adjective"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 9,
+    "title": "What food do you like?",
+    "titleJapanese": "好きな食べ物は何ですか",
+    "description": "Expressing likes, dislikes, and abilities",
+    "difficulty": 2,
+    "xpReward": 60,
+    "order": 9,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "好き・嫌い",
+        "explanation": "Express preferences",
+        "examples": [
+          "わたしはすしがすきです。(I like sushi.)",
+          "わたしはなっとうがきらいです。(I dislike natto.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "すき",
+        "hiragana": "すき",
+        "romaji": "suki",
+        "english": "like",
+        "partOfSpeech": "na-adjective"
+      },
+      {
+        "japanese": "きらい",
+        "hiragana": "きらい",
+        "romaji": "kirai",
+        "english": "dislike",
+        "partOfSpeech": "na-adjective"
+      },
+      {
+        "japanese": "じょうず",
+        "hiragana": "じょうず",
+        "romaji": "jouzu",
+        "english": "skillful",
+        "partOfSpeech": "na-adjective"
+      },
+      {
+        "japanese": "へた",
+        "hiragana": "へた",
+        "romaji": "heta",
+        "english": "unskillful",
+        "partOfSpeech": "na-adjective"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 10,
+    "title": "There's a man over there",
+    "titleJapanese": "あそこに男の人がいます",
+    "description": "Existence verbs います and あります",
+    "difficulty": 3,
+    "xpReward": 60,
+    "order": 10,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "います・あります",
+        "explanation": "います for living things, あります for non-living things",
+        "examples": [
+          "へやにねこがいます。(There is a cat in the room.)",
+          "つくえのうえにほんがあります。(There is a book on the desk.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "います",
+        "hiragana": "います",
+        "romaji": "imasu",
+        "english": "to exist (living)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "あります",
+        "hiragana": "あります",
+        "romaji": "arimasu",
+        "english": "to exist (non-living)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "ひと",
+        "hiragana": "ひと",
+        "romaji": "hito",
+        "english": "person",
+        "partOfSpeech": "noun"
+      }
+    ]
+  }
+]

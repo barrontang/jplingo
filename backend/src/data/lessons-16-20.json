@@ -1,0 +1,158 @@
+[
+  {
+    "lessonNumber": 16,
+    "title": "Please teach me how to use it",
+    "titleJapanese": "使い方を教えてください",
+    "description": "Connecting sentences with te-form",
+    "difficulty": 4,
+    "xpReward": 80,
+    "order": 16,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～て、～",
+        "explanation": "Connect multiple actions in sequence",
+        "examples": [
+          "あさおきて、シャワーをあびます。(I wake up in the morning and take a shower.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "おきる",
+        "hiragana": "おきる",
+        "romaji": "okiru",
+        "english": "to wake up",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "つかう",
+        "hiragana": "つかう",
+        "romaji": "tsukau",
+        "english": "to use",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 17,
+    "title": "What happened?",
+    "titleJapanese": "どうしましたか",
+    "description": "Prohibition with ～ないでください",
+    "difficulty": 4,
+    "xpReward": 80,
+    "order": 17,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～ないでください",
+        "explanation": "Polite prohibition - please don't do",
+        "examples": [
+          "ここでたばこをすわないでください。(Please don't smoke here.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "わすれる",
+        "hiragana": "わすれる",
+        "romaji": "wasureru",
+        "english": "to forget",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 18,
+    "title": "What are your hobbies?",
+    "titleJapanese": "趣味は何ですか",
+    "description": "Dictionary form and potential form",
+    "difficulty": 5,
+    "xpReward": 90,
+    "order": 18,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "ことができます",
+        "explanation": "Express ability - can do something",
+        "examples": [
+          "にほんごをはなすことができます。(I can speak Japanese.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "しゅみ",
+        "hiragana": "しゅみ",
+        "romaji": "shumi",
+        "english": "hobby",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "およぐ",
+        "hiragana": "およぐ",
+        "romaji": "oyogu",
+        "english": "to swim",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 19,
+    "title": "Have you seen sumo?",
+    "titleJapanese": "相撲を見たことがありますか",
+    "description": "Past experience with ～たことがあります",
+    "difficulty": 5,
+    "xpReward": 90,
+    "order": 19,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～たことがあります",
+        "explanation": "Express past experience - have done something",
+        "examples": [
+          "すもうをみたことがあります。(I have seen sumo.)",
+          "ふじさんにのぼったことがあります。(I have climbed Mt. Fuji.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "すもう",
+        "hiragana": "すもう",
+        "romaji": "sumou",
+        "english": "sumo wrestling",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 20,
+    "title": "How was summer vacation?",
+    "titleJapanese": "夏休みはどうでしたか",
+    "description": "Plain form and casual speech",
+    "difficulty": 5,
+    "xpReward": 90,
+    "order": 20,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "Plain form",
+        "explanation": "Casual verb endings without ます",
+        "examples": [
+          "たべる (to eat - casual)",
+          "たべない (don't eat - casual)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "なつやすみ",
+        "hiragana": "なつやすみ",
+        "romaji": "natsuyasumi",
+        "english": "summer vacation",
+        "partOfSpeech": "noun"
+      }
+    ]
+  }
+]

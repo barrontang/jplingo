@@ -1,0 +1,174 @@
+[
+  {
+    "lessonNumber": 21,
+    "title": "What do you think?",
+    "titleJapanese": "どう思いますか",
+    "description": "Expressing opinions with ～と思います",
+    "difficulty": 5,
+    "xpReward": 100,
+    "order": 21,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～と思います",
+        "explanation": "Express opinions and thoughts",
+        "examples": [
+          "あしたはあめだとおもいます。(I think it will rain tomorrow.)",
+          "このえいがはおもしろいとおもいます。(I think this movie is interesting.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "おもう",
+        "hiragana": "おもう",
+        "romaji": "omou",
+        "english": "to think",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "いう",
+        "hiragana": "いう",
+        "romaji": "iu",
+        "english": "to say",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 22,
+    "title": "What kind of room is good?",
+    "titleJapanese": "どんな部屋がいいですか",
+    "description": "Relative clauses and noun modification",
+    "difficulty": 5,
+    "xpReward": 100,
+    "order": 22,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "Relative clauses",
+        "explanation": "Modify nouns with verb phrases",
+        "examples": [
+          "きのうよんだほん (the book I read yesterday)",
+          "ともだちがくれたプレゼント (the present my friend gave me)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "へや",
+        "hiragana": "へや",
+        "romaji": "heya",
+        "english": "room",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "どんな",
+        "hiragana": "どんな",
+        "romaji": "donna",
+        "english": "what kind of",
+        "partOfSpeech": "pronoun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 23,
+    "title": "How do you get there?",
+    "titleJapanese": "どうやって行きますか",
+    "description": "Conditional ～とき and ～と",
+    "difficulty": 5,
+    "xpReward": 100,
+    "order": 23,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～とき",
+        "explanation": "When doing something",
+        "examples": [
+          "にほんへいくとき、パスポートがひつようです。(When going to Japan, you need a passport.)"
+        ]
+      },
+      {
+        "title": "～と",
+        "explanation": "Conditional - when/if",
+        "examples": [
+          "このボタンをおすと、でんきがつきます。(When you press this button, the light turns on.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "どうやって",
+        "hiragana": "どうやって",
+        "romaji": "douyatte",
+        "english": "how, by what means",
+        "partOfSpeech": "adverb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 24,
+    "title": "Shall I help?",
+    "titleJapanese": "手伝いましょうか",
+    "description": "Giving and receiving favors",
+    "difficulty": 5,
+    "xpReward": 100,
+    "order": 24,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～てくれます/もらいます",
+        "explanation": "Someone does something for you / You have someone do something",
+        "examples": [
+          "ともだちがてつだってくれました。(My friend helped me.)",
+          "せんせいにおしえてもらいました。(I had the teacher teach me.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "てつだう",
+        "hiragana": "てつだう",
+        "romaji": "tetsudau",
+        "english": "to help",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 25,
+    "title": "Thank you for everything",
+    "titleJapanese": "いろいろお世話になりました",
+    "description": "Conditional ～たら and review",
+    "difficulty": 5,
+    "xpReward": 100,
+    "order": 25,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～たら",
+        "explanation": "If/when (completed conditional)",
+        "examples": [
+          "あめがやんだら、でかけましょう。(When the rain stops, let's go out.)",
+          "じかんがあったら、えいがをみます。(If I have time, I'll watch a movie.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "おせわになる",
+        "hiragana": "おせわになる",
+        "romaji": "osewa ni naru",
+        "english": "to be in someone's care",
+        "partOfSpeech": "phrase"
+      },
+      {
+        "japanese": "いろいろ",
+        "hiragana": "いろいろ",
+        "romaji": "iroiro",
+        "english": "various",
+        "partOfSpeech": "adverb"
+      }
+    ]
+  }
+]

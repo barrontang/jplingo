@@ -1,0 +1,165 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  username      String   @unique
+  email         String   @unique
+  password      String
+  level         Int      @default(1)
+  xp            Int      @default(0)
+  streak        Int      @default(0)
+  hearts        Int      @default(5)
+  premium       Boolean  @default(false)
+  lastLoginAt   DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  progress      UserProgress[]
+  achievements  UserAchievement[]
+  vocabulary    UserVocabulary[]
+
+  @@map("users")
+}
+
+model Lesson {
+  id                Int      @id @default(autoincrement())
+  chapterNumber     Int      @unique
+  title             String
+  titleJapanese     String?
+  description       String
+  grammarPoints     String[]
+  unlockedAtLevel   Int      @default(1)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  vocabulary        Vocabulary[]
+  exercises         Exercise[]
+  userProgress      UserProgress[]
+
+  @@map("lessons")
+}
+
+model Vocabulary {
+  id                String   @id @default(uuid())
+  lessonId          Int
+  word              String
+  reading           String
+  meaning           String
+  partOfSpeech      String
+  audioUrl          String?
+  imageUrl          String?
+  exampleSentence   String
+  exampleReading    String
+  exampleMeaning    String
+  difficulty        Int      @default(1)
+  createdAt         DateTime @default(now())
+
+  lesson            Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  userVocabulary    UserVocabulary[]
+
+  @@map("vocabulary")
+}
+
+model Exercise {
+  id                String       @id @default(uuid())
+  lessonId          Int
+  type              ExerciseType
+  question          String
+  correctAnswer     String
+  options           String[]
+  audioUrl          String?
+  imageUrl          String?
+  explanation       String?
+  difficulty        Int          @default(1)
+  xpReward          Int          @default(10)
+  createdAt         DateTime     @default(now())
+
+  lesson            Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@map("exercises")
+}
+
+enum ExerciseType {
+  TRANSLATION_JP_TO_EN
+  TRANSLATION_EN_TO_JP
+  LISTENING
+  FILL_IN_BLANK
+  MULTIPLE_CHOICE
+  MATCHING
+  SPEAKING
+  CHARACTER_RECOGNITION
+}
+
+model UserProgress {
+  id                   String   @id @default(uuid())
+  userId               String
+  lessonId             Int
+  completionPercentage Int      @default(0)
+  masteryScore         Int      @default(0)
+  timesCompleted       Int      @default(0)
+  lastReviewed         DateTime @default(now())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson               Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@map("user_progress")
+}
+
+model UserVocabulary {
+  id                String   @id @default(uuid())
+  userId            String
+  vocabularyId      String
+  strength          Int      @default(0) // 0-100
+  timesReviewed     Int      @default(0)
+  lastReviewed      DateTime @default(now())
+  nextReviewDate    DateTime
+  createdAt         DateTime @default(now())
+
+  user              User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vocabulary        Vocabulary @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, vocabularyId])
+  @@map("user_vocabulary")
+}
+
+model Achievement {
+  id                String   @id @default(uuid())
+  name              String   @unique
+  title             String
+  description       String
+  icon              String
+  category          String
+  requirement       Int
+  xpReward          Int      @default(0)
+  createdAt         DateTime @default(now())
+
+  userAchievements  UserAchievement[]
+
+  @@map("achievements")
+}
+
+model UserAchievement {
+  id                String   @id @default(uuid())
+  userId            String
+  achievementId     String
+  unlockedAt        DateTime @default(now())
+
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievement       Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
+  @@map("user_achievements")
+}

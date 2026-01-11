@@ -1,0 +1,580 @@
+import React, { useState } from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  TouchableOpacity,
+  Platform,
+  ScrollView,
+} from 'react-native';
+
+type Screen = 'home' | 'lesson' | 'quiz' | 'result';
+
+interface QuizQuestion {
+  id: number;
+  question: string;
+  options: string[];
+  correctAnswer: number;
+  explanation: string;
+}
+
+const lesson1Vocab = [
+  { japanese: 'わたし', romaji: 'watashi', english: 'I, me' },
+  { japanese: 'がくせい', romaji: 'gakusei', english: 'student' },
+  { japanese: 'せんせい', romaji: 'sensei', english: 'teacher' },
+  { japanese: 'です', romaji: 'desu', english: 'to be (polite)' },
+  { japanese: 'じゃありません', romaji: 'ja arimasen', english: 'is not' },
+];
+
+const quizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: 'How do you say "I" in Japanese?',
+    options: ['せんせい', 'わたし', 'がくせい', 'です'],
+    correctAnswer: 1,
+    explanation: 'わたし (watashi) means "I" or "me"',
+  },
+  {
+    id: 2,
+    question: 'What does "がくせい" mean?',
+    options: ['teacher', 'student', 'book', 'school'],
+    correctAnswer: 1,
+    explanation: 'がくせい (gakusei) means "student"',
+  },
+  {
+    id: 3,
+    question: 'Complete: わたし___ がくせいです',
+    options: ['の', 'が', 'は', 'を'],
+    correctAnswer: 2,
+    explanation: 'は (wa) is the topic marker. わたしは がくせいです = I am a student',
+  },
+  {
+    id: 4,
+    question: 'How do you say "is not" (negative)?',
+    options: ['です', 'ですか', 'じゃありません', 'ありがとう'],
+    correctAnswer: 2,
+    explanation: 'じゃありません (ja arimasen) is the negative form of です',
+  },
+  {
+    id: 5,
+    question: 'What does "せんせい" mean?',
+    options: ['student', 'doctor', 'teacher', 'friend'],
+    correctAnswer: 2,
+    explanation: 'せんせい (sensei) means "teacher"',
+  },
+];
+
+const App = () => {
+  const [screen, setScreen] = useState<Screen>('home');
+  const [xp, setXp] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
+
+  const handleStartLearning = () => {
+    setScreen('lesson');
+  };
+
+  const handleStartQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setAnsweredQuestions([]);
+    setScreen('quiz');
+  };
+
+  const handleAnswer = (selectedAnswer: number) => {
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+
+    if (isCorrect) {
+      setScore(score + 1);
+      setXp(xp + 20);
+    }
+
+    setAnsweredQuestions([...answeredQuestions, selectedAnswer]);
+
+    if (Platform.OS === 'web') {
+      (global as any).alert(
+        isCorrect
+          ? `✅ Correct!\n\n${currentQuestion.explanation}\n\n+20 XP`
+          : `❌ Wrong\n\nCorrect answer: ${currentQuestion.options[currentQuestion.correctAnswer]}\n\n${currentQuestion.explanation}`,
+      );
+    }
+
+    // Move to next question or show results
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+      setTimeout(() => setCurrentQuestionIndex(currentQuestionIndex + 1), 100);
+    } else {
+      setTimeout(() => setScreen('result'), 100);
+    }
+  };
+
+  const handleBackToHome = () => {
+    setScreen('home');
+  };
+
+  // Home Screen
+  if (screen === 'home') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#58CC02" />
+        <View style={styles.header}>
+          <Text style={styles.headerText}>🎌 JPLingo</Text>
+          <Text style={styles.subtitle}>Learn Japanese the fun way!</Text>
+        </View>
+
+        <ScrollView style={styles.content}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>みんなの日本語</Text>
+            <Text style={styles.cardSubtitle}>Minna No Nihongo</Text>
+            <Text style={styles.cardDescription}>
+              Based on the world-famous Japanese textbook series
+            </Text>
+          </View>
+
+          <View style={styles.statsContainer}>
+            <View style={styles.statBox}>
+              <Text style={styles.statNumber}>{xp}</Text>
+              <Text style={styles.statLabel}>XP</Text>
+            </View>
+            <View style={styles.statBox}>
+              <Text style={styles.statNumber}>0</Text>
+              <Text style={styles.statLabel}>Day Streak</Text>
+            </View>
+            <View style={styles.statBox}>
+              <Text style={styles.statNumber}>5</Text>
+              <Text style={styles.statLabel}>Hearts</Text>
+            </View>
+          </View>
+
+          <TouchableOpacity style={styles.button} onPress={handleStartLearning}>
+            <Text style={styles.buttonText}>START LEARNING</Text>
+          </TouchableOpacity>
+
+          <View style={styles.lessonPreview}>
+            <Text style={styles.lessonTitle}>Lesson 1</Text>
+            <Text style={styles.lessonJapanese}>はじめまして</Text>
+            <Text style={styles.lessonEnglish}>Nice to meet you</Text>
+          </View>
+        </ScrollView>
+
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>Backend: localhost:3000 ✓</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  // Lesson Screen
+  if (screen === 'lesson') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#58CC02" />
+        <View style={styles.header}>
+          <Text style={styles.headerText}>📚 Lesson 1</Text>
+          <Text style={styles.subtitle}>はじめまして - Nice to meet you</Text>
+        </View>
+
+        <ScrollView style={styles.content}>
+          <View style={styles.lessonCard}>
+            <Text style={styles.sectionTitle}>Grammar Point</Text>
+            <Text style={styles.grammarText}>～は～です</Text>
+            <Text style={styles.descriptionText}>
+              [Topic] は [Noun/Description] です{'\n'}
+              "As for [topic], it is [description]"
+            </Text>
+            <Text style={styles.exampleText}>
+              わたしは がくせいです{'\n'}
+              (watashi wa gakusei desu){'\n'}
+              I am a student
+            </Text>
+          </View>
+
+          <View style={styles.lessonCard}>
+            <Text style={styles.sectionTitle}>Vocabulary</Text>
+            {lesson1Vocab.map((word, index) => (
+              <View key={index} style={styles.vocabItem}>
+                <Text style={styles.vocabJapanese}>{word.japanese}</Text>
+                <Text style={styles.vocabRomaji}>{word.romaji}</Text>
+                <Text style={styles.vocabEnglish}>{word.english}</Text>
+              </View>
+            ))}
+          </View>
+
+          <TouchableOpacity style={styles.button} onPress={handleStartQuiz}>
+            <Text style={styles.buttonText}>START QUIZ</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.backButton} onPress={handleBackToHome}>
+            <Text style={styles.backButtonText}>← Back to Home</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
+  // Quiz Screen
+  if (screen === 'quiz') {
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#58CC02" />
+        <View style={styles.header}>
+          <Text style={styles.headerText}>
+            ✏️ Quiz {currentQuestionIndex + 1}/{quizQuestions.length}
+          </Text>
+          <Text style={styles.subtitle}>Score: {score} | XP: {xp}</Text>
+        </View>
+
+        <ScrollView style={styles.content}>
+          <View style={styles.quizCard}>
+            <Text style={styles.questionText}>{currentQuestion.question}</Text>
+
+            {currentQuestion.options.map((option, index) => (
+              <TouchableOpacity
+                key={index}
+                style={styles.optionButton}
+                onPress={() => handleAnswer(index)}>
+                <Text style={styles.optionText}>{option}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          <View style={styles.progressBar}>
+            <View
+              style={[
+                styles.progressFill,
+                {
+                  width: `${
+                    ((currentQuestionIndex + 1) / quizQuestions.length) * 100
+                  }%`,
+                },
+              ]}
+            />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
+  // Result Screen
+  if (screen === 'result') {
+    const percentage = Math.round((score / quizQuestions.length) * 100);
+    const passed = percentage >= 70;
+    const earnedXP = score * 20;
+
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#58CC02" />
+        <View style={styles.header}>
+          <Text style={styles.headerText}>
+            {passed ? '🎉 Congratulations!' : '📝 Keep Practicing!'}
+          </Text>
+          <Text style={styles.subtitle}>Quiz Complete</Text>
+        </View>
+
+        <ScrollView style={styles.content}>
+          <View style={styles.resultCard}>
+            <Text style={styles.resultScore}>
+              {score}/{quizQuestions.length}
+            </Text>
+            <Text style={styles.resultPercentage}>{percentage}%</Text>
+            <Text style={styles.resultText}>
+              {passed
+                ? 'Great job! You passed the quiz!'
+                : 'Keep studying and try again!'}
+            </Text>
+
+            <View style={styles.xpEarned}>
+              <Text style={styles.xpEarnedText}>Earned: +{earnedXP} XP</Text>
+              <Text style={styles.totalXpText}>Total XP: {xp}</Text>
+            </View>
+          </View>
+
+          <TouchableOpacity style={styles.button} onPress={handleStartQuiz}>
+            <Text style={styles.buttonText}>TRY AGAIN</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.backButton} onPress={handleBackToHome}>
+            <Text style={styles.backButtonText}>← Back to Home</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
+  return null;
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#131F24',
+  },
+  header: {
+    backgroundColor: '#58CC02',
+    paddingVertical: 30,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  headerText: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#FFFFFF',
+    marginTop: 5,
+    opacity: 0.9,
+  },
+  content: {
+    flex: 1,
+    padding: 20,
+  },
+  card: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+    borderWidth: 2,
+    borderColor: '#58CC02',
+  },
+  cardTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+  },
+  cardSubtitle: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  cardDescription: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    textAlign: 'center',
+    marginTop: 10,
+  },
+  statsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  statBox: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 12,
+    padding: 15,
+    alignItems: 'center',
+    minWidth: 80,
+  },
+  statNumber: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#58CC02',
+  },
+  statLabel: {
+    fontSize: 12,
+    color: '#AFAFAF',
+    marginTop: 4,
+  },
+  button: {
+    backgroundColor: '#58CC02',
+    borderRadius: 16,
+    paddingVertical: 16,
+    alignItems: 'center',
+    marginBottom: 20,
+    shadowColor: '#58CC02',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  lessonPreview: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 20,
+    alignItems: 'center',
+  },
+  lessonTitle: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    marginBottom: 8,
+  },
+  lessonJapanese: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  lessonEnglish: {
+    fontSize: 16,
+    color: '#58CC02',
+    marginTop: 8,
+  },
+  footer: {
+    padding: 15,
+    alignItems: 'center',
+    borderTopWidth: 1,
+    borderTopColor: '#2A3C44',
+  },
+  footerText: {
+    fontSize: 12,
+    color: '#58CC02',
+  },
+  // Lesson Screen Styles
+  lessonCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#58CC02',
+    marginBottom: 15,
+  },
+  grammarText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  descriptionText: {
+    fontSize: 16,
+    color: '#AFAFAF',
+    marginBottom: 15,
+    lineHeight: 24,
+  },
+  exampleText: {
+    fontSize: 16,
+    color: '#FFFFFF',
+    backgroundColor: '#0D1418',
+    padding: 15,
+    borderRadius: 8,
+    lineHeight: 24,
+  },
+  vocabItem: {
+    backgroundColor: '#0D1418',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 10,
+  },
+  vocabJapanese: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  vocabRomaji: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    marginTop: 4,
+  },
+  vocabEnglish: {
+    fontSize: 16,
+    color: '#58CC02',
+    marginTop: 4,
+  },
+  backButton: {
+    backgroundColor: '#2A3C44',
+    borderRadius: 12,
+    paddingVertical: 12,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  backButtonText: {
+    fontSize: 16,
+    color: '#AFAFAF',
+  },
+  // Quiz Screen Styles
+  quizCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+  },
+  questionText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  optionButton: {
+    backgroundColor: '#2A3C44',
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    marginBottom: 12,
+    borderWidth: 2,
+    borderColor: '#3A4C54',
+  },
+  optionText: {
+    fontSize: 16,
+    color: '#FFFFFF',
+    textAlign: 'center',
+  },
+  progressBar: {
+    height: 8,
+    backgroundColor: '#2A3C44',
+    borderRadius: 4,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#58CC02',
+  },
+  // Result Screen Styles
+  resultCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 30,
+    marginBottom: 20,
+    alignItems: 'center',
+  },
+  resultScore: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: '#58CC02',
+  },
+  resultPercentage: {
+    fontSize: 32,
+    color: '#FFFFFF',
+    marginTop: 10,
+  },
+  resultText: {
+    fontSize: 18,
+    color: '#AFAFAF',
+    marginTop: 15,
+    textAlign: 'center',
+  },
+  xpEarned: {
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: '#0D1418',
+    borderRadius: 12,
+    alignItems: 'center',
+  },
+  xpEarnedText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#58CC02',
+  },
+  totalXpText: {
+    fontSize: 16,
+    color: '#AFAFAF',
+    marginTop: 5,
+  },
+});
+
+export default App;

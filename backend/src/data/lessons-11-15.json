@@ -1,0 +1,189 @@
+[
+  {
+    "lessonNumber": 11,
+    "title": "There are four apples",
+    "titleJapanese": "りんごが四つあります",
+    "description": "Japanese counters and counting objects",
+    "difficulty": 3,
+    "xpReward": 70,
+    "order": 11,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "Counters",
+        "explanation": "Different counters for different objects",
+        "examples": [
+          "りんごがよっつあります。(There are four apples.)",
+          "ほんがさんさつあります。(There are three books.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "ひとつ",
+        "hiragana": "ひとつ",
+        "romaji": "hitotsu",
+        "english": "one (item)",
+        "partOfSpeech": "counter"
+      },
+      {
+        "japanese": "ふたつ",
+        "hiragana": "ふたつ",
+        "romaji": "futatsu",
+        "english": "two (items)",
+        "partOfSpeech": "counter"
+      },
+      {
+        "japanese": "みっつ",
+        "hiragana": "みっつ",
+        "romaji": "mittsu",
+        "english": "three (items)",
+        "partOfSpeech": "counter"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 12,
+    "title": "Yesterday was cold",
+    "titleJapanese": "昨日は寒かったです",
+    "description": "Past tense of adjectives",
+    "difficulty": 3,
+    "xpReward": 70,
+    "order": 12,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "Past tense adjectives",
+        "explanation": "Change い to かった for i-adjectives, add でした for na-adjectives",
+        "examples": [
+          "きのうはさむかったです。(Yesterday was cold.)",
+          "えいがはおもしろかったです。(The movie was interesting.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "きのう",
+        "hiragana": "きのう",
+        "romaji": "kinou",
+        "english": "yesterday",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "さむい",
+        "hiragana": "さむい",
+        "romaji": "samui",
+        "english": "cold",
+        "partOfSpeech": "i-adjective"
+      },
+      {
+        "japanese": "あつい",
+        "hiragana": "あつい",
+        "romaji": "atsui",
+        "english": "hot",
+        "partOfSpeech": "i-adjective"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 13,
+    "title": "Separately, please",
+    "titleJapanese": "別々にお願いします",
+    "description": "Expressing desires with ～たいです",
+    "difficulty": 3,
+    "xpReward": 70,
+    "order": 13,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～たいです",
+        "explanation": "Express what you want to do",
+        "examples": [
+          "にほんへいきたいです。(I want to go to Japan.)",
+          "すしをたべたいです。(I want to eat sushi.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "ほしい",
+        "hiragana": "ほしい",
+        "romaji": "hoshii",
+        "english": "to want (object)",
+        "partOfSpeech": "i-adjective"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 14,
+    "title": "Please wait a moment",
+    "titleJapanese": "ちょっと待ってください",
+    "description": "Te-form and requests",
+    "difficulty": 4,
+    "xpReward": 80,
+    "order": 14,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～てください",
+        "explanation": "Make polite requests using te-form",
+        "examples": [
+          "ちょっとまってください。(Please wait a moment.)",
+          "きいてください。(Please listen.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "まつ",
+        "hiragana": "まつ",
+        "romaji": "matsu",
+        "english": "to wait",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "きく",
+        "hiragana": "きく",
+        "romaji": "kiku",
+        "english": "to listen, ask",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 15,
+    "title": "May I take photos?",
+    "titleJapanese": "写真を撮ってもいいですか",
+    "description": "Asking permission with ～てもいいですか",
+    "difficulty": 4,
+    "xpReward": 80,
+    "order": 15,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～てもいいですか",
+        "explanation": "Ask for permission",
+        "examples": [
+          "しゃしんをとってもいいですか。(May I take photos?)",
+          "ここですわってもいいですか。(May I sit here?)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "とる",
+        "hiragana": "とる",
+        "romaji": "toru",
+        "english": "to take",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "しゃしん",
+        "hiragana": "しゃしん",
+        "romaji": "shashin",
+        "english": "photograph",
+        "partOfSpeech": "noun"
+      }
+    ]
+  }
+]

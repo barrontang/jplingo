@@ -1,0 +1,303 @@
+[
+  {
+    "lessonNumber": 1,
+    "title": "Nice to meet you",
+    "titleJapanese": "はじめまして",
+    "description": "Basic self-introduction, greetings, and using は and です",
+    "difficulty": 1,
+    "xpReward": 50,
+    "order": 1,
+    "isUnlocked": true,
+    "grammarPoints": [
+      {
+        "title": "～は～です",
+        "explanation": "Use は (wa) to mark the topic and です (desu) to say 'is/am/are'",
+        "examples": [
+          "わたしはマイクです。(I am Mike.)",
+          "わたしはがくせいです。(I am a student.)"
+        ]
+      },
+      {
+        "title": "～じゃありません",
+        "explanation": "Use じゃありません to make negative statements",
+        "examples": [
+          "わたしはせんせいじゃありません。(I am not a teacher.)",
+          "マイクさんはがくせいじゃありません。(Mike is not a student.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "わたし",
+        "hiragana": "わたし",
+        "romaji": "watashi",
+        "english": "I, me",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "がくせい",
+        "hiragana": "がくせい",
+        "romaji": "gakusei",
+        "english": "student",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "せんせい",
+        "hiragana": "せんせい",
+        "romaji": "sensei",
+        "english": "teacher",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "です",
+        "hiragana": "です",
+        "romaji": "desu",
+        "english": "to be (polite)",
+        "partOfSpeech": "copula"
+      },
+      {
+        "japanese": "じゃありません",
+        "hiragana": "じゃありません",
+        "romaji": "ja arimasen",
+        "english": "to not be",
+        "partOfSpeech": "copula"
+      },
+      {
+        "japanese": "はじめまして",
+        "hiragana": "はじめまして",
+        "romaji": "hajimemashite",
+        "english": "Nice to meet you",
+        "partOfSpeech": "phrase"
+      },
+      {
+        "japanese": "どうぞよろしく",
+        "hiragana": "どうぞよろしく",
+        "romaji": "douzo yoroshiku",
+        "english": "Please treat me well",
+        "partOfSpeech": "phrase"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 2,
+    "title": "What is this?",
+    "titleJapanese": "これは何ですか",
+    "description": "Demonstratives (this, that) and asking what things are",
+    "difficulty": 1,
+    "xpReward": 50,
+    "order": 2,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "これ・それ・あれ",
+        "explanation": "これ (this), それ (that near you), あれ (that over there)",
+        "examples": [
+          "これはほんです。(This is a book.)",
+          "それはペンですか。(Is that a pen?)"
+        ]
+      },
+      {
+        "title": "この・その・あの",
+        "explanation": "この (this ~), その (that ~), あの (that ~ over there)",
+        "examples": [
+          "このほんはわたしのです。(This book is mine.)",
+          "そのペンはだれのですか。(Whose pen is that?)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "これ",
+        "hiragana": "これ",
+        "romaji": "kore",
+        "english": "this",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "それ",
+        "hiragana": "それ",
+        "romaji": "sore",
+        "english": "that",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "あれ",
+        "hiragana": "あれ",
+        "romaji": "are",
+        "english": "that over there",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "ほん",
+        "hiragana": "ほん",
+        "romaji": "hon",
+        "english": "book",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "ペン",
+        "hiragana": "ぺん",
+        "romaji": "pen",
+        "english": "pen",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "なん/なに",
+        "hiragana": "なん/なに",
+        "romaji": "nan/nani",
+        "english": "what",
+        "partOfSpeech": "pronoun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 3,
+    "title": "This is a post office",
+    "titleJapanese": "ここは郵便局です",
+    "description": "Location words and places",
+    "difficulty": 1,
+    "xpReward": 50,
+    "order": 3,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "ここ・そこ・あそこ",
+        "explanation": "ここ (here), そこ (there), あそこ (over there)",
+        "examples": [
+          "ここはゆうびんきょくです。(Here is a post office.)",
+          "そこはぎんこうですか。(Is there a bank?)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "ここ",
+        "hiragana": "ここ",
+        "romaji": "koko",
+        "english": "here",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "そこ",
+        "hiragana": "そこ",
+        "romaji": "soko",
+        "english": "there",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "あそこ",
+        "hiragana": "あそこ",
+        "romaji": "asoko",
+        "english": "over there",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "ゆうびんきょく",
+        "hiragana": "ゆうびんきょく",
+        "romaji": "yuubinkyoku",
+        "english": "post office",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "ぎんこう",
+        "hiragana": "ぎんこう",
+        "romaji": "ginkou",
+        "english": "bank",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 4,
+    "title": "What time is it?",
+    "titleJapanese": "今何時ですか",
+    "description": "Numbers and telling time",
+    "difficulty": 2,
+    "xpReward": 50,
+    "order": 4,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "Time expressions",
+        "explanation": "Use ～じ for hours and ～ふん for minutes",
+        "examples": [
+          "いまなんじですか。(What time is it now?)",
+          "９じです。(It's 9 o'clock.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "いま",
+        "hiragana": "いま",
+        "romaji": "ima",
+        "english": "now",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "なんじ",
+        "hiragana": "なんじ",
+        "romaji": "nanji",
+        "english": "what time",
+        "partOfSpeech": "pronoun"
+      },
+      {
+        "japanese": "～じ",
+        "hiragana": "～じ",
+        "romaji": "~ji",
+        "english": "o'clock",
+        "partOfSpeech": "counter"
+      },
+      {
+        "japanese": "～ふん",
+        "hiragana": "～ふん",
+        "romaji": "~fun",
+        "english": "minute",
+        "partOfSpeech": "counter"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 5,
+    "title": "Going to Kyoto",
+    "titleJapanese": "京都へ行きます",
+    "description": "Motion verbs and the particle へ",
+    "difficulty": 2,
+    "xpReward": 50,
+    "order": 5,
+    "isUnlocked": false,
+    "grammarPoints": [
+      {
+        "title": "～へ行きます/来ます/帰ります",
+        "explanation": "Use へ (e) to indicate direction with motion verbs",
+        "examples": [
+          "きょうとへいきます。(I go to Kyoto.)",
+          "うちへかえります。(I return home.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "いきます",
+        "hiragana": "いきます",
+        "romaji": "ikimasu",
+        "english": "to go",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "きます",
+        "hiragana": "きます",
+        "romaji": "kimasu",
+        "english": "to come",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "かえります",
+        "hiragana": "かえります",
+        "romaji": "kaerimasu",
+        "english": "to return",
+        "partOfSpeech": "verb"
+      }
+    ]
+  }
+]
