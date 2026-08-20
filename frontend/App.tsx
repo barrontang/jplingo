@@ -19,6 +19,61 @@ interface QuizQuestion {
   explanation: string;
 }
 
+// JLPT roadmap: JPLingo content today only covers Minna No Nihongo lessons
+// 1-25, which map (approximately, not officially) to N5 and N4. N3-N1 are
+// shown as a visible, honest "planned" roadmap with no lesson content yet.
+type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
+
+interface JlptRoadmapEntry {
+  level: JlptLevel;
+  name: string;
+  goal: string;
+  topics: string[];
+  available: boolean;
+}
+
+const JLPT_ROADMAP: JlptRoadmapEntry[] = [
+  {
+    level: 'N5',
+    name: 'Beginner',
+    goal: 'Read basic hiragana/katakana and build simple sentences.',
+    topics: ['は / です sentences', 'Basic particles', 'Everyday vocabulary'],
+    available: true,
+  },
+  {
+    level: 'N4',
+    name: 'Elementary',
+    goal: 'Handle everyday conversations with more natural grammar.',
+    topics: ['て-form requests', 'Giving & receiving', 'Past/plain forms'],
+    available: true,
+  },
+  {
+    level: 'N3',
+    name: 'Intermediate',
+    goal: 'Follow everyday Japanese at a natural pace.',
+    topics: ['Conditional forms', 'Passive/causative basics', '~650 kanji'],
+    available: false,
+  },
+  {
+    level: 'N2',
+    name: 'Upper-Intermediate',
+    goal: 'Understand news, workplace Japanese, and abstract topics.',
+    topics: ['Formal/keigo basics', 'Complex grammar', '~1000 kanji'],
+    available: false,
+  },
+  {
+    level: 'N1',
+    name: 'Advanced',
+    goal: 'Understand nuanced, academic, and literary Japanese.',
+    topics: ['Advanced nuance', 'Business Japanese', '~2000 kanji'],
+    available: false,
+  },
+];
+
+const DAILY_GOAL_XP = 50;
+const STARTING_HEARTS = 5;
+const PASS_THRESHOLD = 70;
+
 // Lesson content data based on Minna No Nihongo
 const lessonContent: Record<number, {
   grammar: { title: string; description: string; example: string }[];
@@ -859,38 +914,49 @@ const quizQuestions: QuizQuestion[] = [
   },
 ];
 
-// Lesson data for 25 lessons
+// Lesson data for the 25 lessons that exist today. `jlptLevel` mirrors the
+// backend's approximation: lessons 1-15 (core elementary grammar) map to N5,
+// lessons 16-25 (more complex structures) map to N4. See README for caveats.
+const deriveJlptLevel = (lessonNum: number): JlptLevel =>
+  lessonNum <= 15 ? 'N5' : 'N4';
+
 const lessonData = [
-  { num: 1, title: 'はじめまして', english: 'Nice to meet you', unlocked: true },
-  { num: 2, title: 'これは何ですか', english: 'What is this?', unlocked: true },
-  { num: 3, title: 'ここは郵便局です', english: 'This is a post office', unlocked: true },
-  { num: 4, title: '今何時ですか', english: 'What time is it?', unlocked: true },
-  { num: 5, title: '京都へ行きます', english: 'Going to Kyoto', unlocked: true },
-  { num: 6, title: 'いっしょに行きませんか', english: "Won't you go together?", unlocked: true },
-  { num: 7, title: '何であげますか', english: 'How will you give it?', unlocked: true },
-  { num: 8, title: 'マリアさんはきれいです', english: 'Maria is beautiful', unlocked: true },
-  { num: 9, title: '好きな食べ物は何ですか', english: 'What food do you like?', unlocked: true },
-  { num: 10, title: 'あそこに男の人がいます', english: "There's a man over there", unlocked: true },
-  { num: 11, title: 'りんごが四つあります', english: 'There are four apples', unlocked: true },
-  { num: 12, title: '昨日は寒かったです', english: 'Yesterday was cold', unlocked: true },
-  { num: 13, title: '別々にお願いします', english: 'Separately, please', unlocked: true },
-  { num: 14, title: 'ちょっと待ってください', english: 'Please wait a moment', unlocked: true },
-  { num: 15, title: '写真を撮ってもいいですか', english: 'May I take photos?', unlocked: true },
-  { num: 16, title: '使い方を教えてください', english: 'Please teach me how to use it', unlocked: true },
-  { num: 17, title: 'どうしましたか', english: 'What happened?', unlocked: true },
-  { num: 18, title: '趣味は何ですか', english: 'What are your hobbies?', unlocked: true },
-  { num: 19, title: '相撲を見たことがありますか', english: 'Have you seen sumo?', unlocked: true },
-  { num: 20, title: '夏休みはどうでしたか', english: 'How was summer vacation?', unlocked: true },
-  { num: 21, title: 'どう思いますか', english: 'What do you think?', unlocked: true },
-  { num: 22, title: 'どんな部屋がいいですか', english: 'What kind of room is good?', unlocked: true },
-  { num: 23, title: 'どうやって行きますか', english: 'How do you get there?', unlocked: true },
-  { num: 24, title: '手伝いましょうか', english: 'Shall I help?', unlocked: true },
-  { num: 25, title: 'いろいろお世話になりました', english: 'Thank you for everything', unlocked: true },
-];
+  { num: 1, title: 'はじめまして', english: 'Nice to meet you' },
+  { num: 2, title: 'これは何ですか', english: 'What is this?' },
+  { num: 3, title: 'ここは郵便局です', english: 'This is a post office' },
+  { num: 4, title: '今何時ですか', english: 'What time is it?' },
+  { num: 5, title: '京都へ行きます', english: 'Going to Kyoto' },
+  { num: 6, title: 'いっしょに行きませんか', english: "Won't you go together?" },
+  { num: 7, title: '何であげますか', english: 'How will you give it?' },
+  { num: 8, title: 'マリアさんはきれいです', english: 'Maria is beautiful' },
+  { num: 9, title: '好きな食べ物は何ですか', english: 'What food do you like?' },
+  { num: 10, title: 'あそこに男の人がいます', english: "There's a man over there" },
+  { num: 11, title: 'りんごが四つあります', english: 'There are four apples' },
+  { num: 12, title: '昨日は寒かったです', english: 'Yesterday was cold' },
+  { num: 13, title: '別々にお願いします', english: 'Separately, please' },
+  { num: 14, title: 'ちょっと待ってください', english: 'Please wait a moment' },
+  { num: 15, title: '写真を撮ってもいいですか', english: 'May I take photos?' },
+  { num: 16, title: '使い方を教えてください', english: 'Please teach me how to use it' },
+  { num: 17, title: 'どうしましたか', english: 'What happened?' },
+  { num: 18, title: '趣味は何ですか', english: 'What are your hobbies?' },
+  { num: 19, title: '相撲を見たことがありますか', english: 'Have you seen sumo?' },
+  { num: 20, title: '夏休みはどうでしたか', english: 'How was summer vacation?' },
+  { num: 21, title: 'どう思いますか', english: 'What do you think?' },
+  { num: 22, title: 'どんな部屋がいいですか', english: 'What kind of room is good?' },
+  { num: 23, title: 'どうやって行きますか', english: 'How do you get there?' },
+  { num: 24, title: '手伝いましょうか', english: 'Shall I help?' },
+  { num: 25, title: 'いろいろお世話になりました', english: 'Thank you for everything' },
+].map(lesson => ({ ...lesson, jlptLevel: deriveJlptLevel(lesson.num) }));
 
 const App = () => {
   const [screen, setScreen] = useState<Screen>('home');
   const [xp, setXp] = useState(0);
+  const [dailyXp, setDailyXp] = useState(0);
+  const [streak, setStreak] = useState(0);
+  const [hasLoggedStreakToday, setHasLoggedStreakToday] = useState(false);
+  const [hearts, setHearts] = useState(STARTING_HEARTS);
+  const [completedLessons, setCompletedLessons] = useState<number[]>([]);
+  const [selectedLevel, setSelectedLevel] = useState<JlptLevel>('N5');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
@@ -898,14 +964,34 @@ const App = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
-  const [currentQuizQuestions, setCurrentQuizQuestions] = useState<QuizQuestion[]>([]);
+  const [currentQuizQuestions, setCurrentQuizQuestions] = useState<
+    QuizQuestion[]
+  >([]);
+
+  // A lesson is unlocked if it is the very first lesson, or the lesson
+  // immediately before it has already been passed. This makes the lesson
+  // path progress step by step instead of unlocking everything up front.
+  const isLessonUnlocked = (lessonNum: number) =>
+    lessonNum === 1 || completedLessons.includes(lessonNum - 1);
+
+  // Shared hearts display used in the home, lesson, and quiz screen headers.
+  const heartsDisplay =
+    '❤️'.repeat(hearts) + '🤍'.repeat(STARTING_HEARTS - hearts);
 
   const handleStartLearning = (lessonNum: number) => {
+    if (!isLessonUnlocked(lessonNum)) {
+      return;
+    }
     setSelectedLesson(lessonNum);
     setScreen('lesson');
   };
 
   const handleStartQuiz = () => {
+    if (hearts <= 0) {
+      // Zero hearts should never start a quiz; the lesson screen offers a
+      // refill action instead of a start button in this state.
+      return;
+    }
     const questions = generateQuizQuestions(selectedLesson);
     setCurrentQuizQuestions(questions);
     setCurrentQuestionIndex(0);
@@ -923,6 +1009,9 @@ const App = () => {
     if (isCorrect) {
       setScore(score + 1);
       setXp(xp + 20);
+      setDailyXp(dailyXp + 20);
+    } else {
+      setHearts(current => Math.max(0, current - 1));
     }
 
     setAnsweredQuestions([...answeredQuestions, selectedAnswer]);
@@ -934,18 +1023,42 @@ const App = () => {
     if (currentQuestionIndex < currentQuizQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setShowFeedback(false);
-    } else {
-      setQuizCompleted(true);
-      setShowFeedback(false);
+      return;
+    }
+
+    setQuizCompleted(true);
+    setShowFeedback(false);
+
+    const finalPercentage = Math.round(
+      (score / currentQuizQuestions.length) * 100,
+    );
+    if (finalPercentage >= PASS_THRESHOLD) {
+      setCompletedLessons(current =>
+        current.includes(selectedLesson) ? current : [...current, selectedLesson],
+      );
+      if (!hasLoggedStreakToday) {
+        setStreak(current => current + 1);
+        setHasLoggedStreakToday(true);
+      }
     }
   };
 
   const handleRetryQuiz = () => {
+    if (hearts <= 0) {
+      // Stay on the results screen and let the refill flow (via Back to
+      // Home -> lesson screen) handle getting hearts back before retrying.
+      return;
+    }
     setCurrentQuestionIndex(0);
     setScore(0);
     setAnsweredQuestions([]);
     setShowFeedback(false);
     setQuizCompleted(false);
+  };
+
+  const handleRefillHearts = () => {
+    // Deterministic local-session reset; no server/network call involved.
+    setHearts(STARTING_HEARTS);
   };
 
   const handleBackToHome = () => {
@@ -956,12 +1069,21 @@ const App = () => {
 
   // Home Screen
   if (screen === 'home') {
+    const activeLevelInfo = JLPT_ROADMAP.find(
+      entry => entry.level === selectedLevel,
+    )!;
+    const levelLessons = lessonData.filter(
+      lesson => lesson.jlptLevel === selectedLevel,
+    );
+    const dailyGoalMet = dailyXp >= DAILY_GOAL_XP;
+    const questProgress = Math.min(dailyXp / DAILY_GOAL_XP, 1) * 100;
+
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor="#58CC02" />
-        <View style={styles.header}>
+        <View style={styles.header} accessibilityRole="header">
           <Text style={styles.headerText}>🎌 JPLingo</Text>
-          <Text style={styles.subtitle}>Learn Japanese the fun way!</Text>
+          <Text style={styles.subtitle}>N5 → N1 Japanese roadmap</Text>
         </View>
 
         <ScrollView style={styles.content}>
@@ -969,7 +1091,8 @@ const App = () => {
             <Text style={styles.cardTitle}>みんなの日本語</Text>
             <Text style={styles.cardSubtitle}>Minna No Nihongo</Text>
             <Text style={styles.cardDescription}>
-              Based on the world-famous Japanese textbook series
+              Original lessons inspired by the classic beginner curriculum,
+              organized along the JLPT N5-N1 roadmap.
             </Text>
           </View>
 
@@ -979,43 +1102,165 @@ const App = () => {
               <Text style={styles.statLabel}>XP</Text>
             </View>
             <View style={styles.statBox}>
-              <Text style={styles.statNumber}>0</Text>
+              <Text style={styles.statNumber}>{streak}🔥</Text>
               <Text style={styles.statLabel}>Day Streak</Text>
             </View>
             <View style={styles.statBox}>
-              <Text style={styles.statNumber}>5</Text>
+              <Text
+                style={styles.statHearts}
+                accessibilityLabel={`${hearts} of ${STARTING_HEARTS} hearts remaining`}>
+                {heartsDisplay}
+              </Text>
               <Text style={styles.statLabel}>Hearts</Text>
             </View>
           </View>
 
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>📚 Select a Lesson</Text>
-            <Text style={styles.sectionSubtitle}>25 lessons available</Text>
+          <View
+            style={styles.questCard}
+            accessibilityRole="progressbar"
+            accessibilityValue={{
+              min: 0,
+              max: DAILY_GOAL_XP,
+              now: Math.min(dailyXp, DAILY_GOAL_XP),
+            }}>
+            <View style={styles.questHeaderRow}>
+              <Text style={styles.questTitle}>
+                {dailyGoalMet ? '✅ Daily Quest Complete!' : '🎯 Daily Quest'}
+              </Text>
+              <Text style={styles.questSubtitle}>
+                {Math.min(dailyXp, DAILY_GOAL_XP)}/{DAILY_GOAL_XP} XP
+              </Text>
+            </View>
+            <View style={styles.questProgressTrack}>
+              <View
+                style={[
+                  styles.questProgressFill,
+                  {width: `${questProgress}%`},
+                ]}
+              />
+            </View>
           </View>
 
-          <View style={styles.lessonGrid}>
-            {lessonData.map((lesson) => (
-              <TouchableOpacity
-                key={lesson.num}
-                style={[
-                  styles.lessonButton,
-                  !lesson.unlocked && styles.lessonButtonLocked,
-                ]}
-                onPress={() => lesson.unlocked && handleStartLearning(lesson.num)}
-                disabled={!lesson.unlocked}>
-                <View style={styles.lessonNumberBadge}>
-                  <Text style={styles.lessonNumberText}>{lesson.num}</Text>
-                </View>
-                <Text style={styles.lessonTitleJapanese}>{lesson.title}</Text>
-                <Text style={styles.lessonTitleEnglish} numberOfLines={2}>
-                  {lesson.english}
-                </Text>
-                {!lesson.unlocked && (
-                  <Text style={styles.lockedIcon}>🔒</Text>
-                )}
-              </TouchableOpacity>
-            ))}
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>🗾 JLPT Roadmap</Text>
+            <Text style={styles.sectionSubtitle}>
+              Select a level to see its lessons and goals
+            </Text>
           </View>
+
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.levelSelectorRow}>
+            {JLPT_ROADMAP.map(entry => {
+              const isActive = entry.level === selectedLevel;
+              return (
+                <TouchableOpacity
+                  key={entry.level}
+                  style={[
+                    styles.levelTab,
+                    isActive && styles.levelTabActive,
+                    !entry.available && styles.levelTabPlanned,
+                  ]}
+                  accessibilityRole="tab"
+                  accessibilityState={{selected: isActive}}
+                  accessibilityLabel={`${entry.level}: ${entry.name}${
+                    entry.available ? '' : ', planned, no lessons yet'
+                  }`}
+                  onPress={() => setSelectedLevel(entry.level)}>
+                  <Text
+                    style={[
+                      styles.levelTabTitle,
+                      isActive && styles.levelTabTitleActive,
+                    ]}>
+                    {entry.level}
+                  </Text>
+                  <Text style={styles.levelTabSubtitle}>{entry.name}</Text>
+                  {!entry.available && (
+                    <Text style={styles.levelTabLocked}>🔒 Planned</Text>
+                  )}
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+
+          <View style={styles.roadmapGoalCard}>
+            <Text style={styles.roadmapGoalTitle}>
+              {activeLevelInfo.level} · {activeLevelInfo.name}
+            </Text>
+            <Text style={styles.roadmapGoalText}>{activeLevelInfo.goal}</Text>
+            <View style={styles.roadmapTopicsRow}>
+              {activeLevelInfo.topics.map(topic => (
+                <View key={topic} style={styles.roadmapTopicChip}>
+                  <Text style={styles.roadmapTopicText}>{topic}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+
+          {activeLevelInfo.available ? (
+            <>
+              <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>📚 Select a Lesson</Text>
+                <Text style={styles.sectionSubtitle}>
+                  {levelLessons.length} lessons ·{' '}
+                  {
+                    levelLessons.filter(l => completedLessons.includes(l.num))
+                      .length
+                  }{' '}
+                  completed
+                </Text>
+              </View>
+
+              <View style={styles.lessonGrid}>
+                {levelLessons.map(lesson => {
+                  const unlocked = isLessonUnlocked(lesson.num);
+                  const completed = completedLessons.includes(lesson.num);
+                  return (
+                    <TouchableOpacity
+                      key={lesson.num}
+                      style={[
+                        styles.lessonButton,
+                        !unlocked && styles.lessonButtonLocked,
+                        completed && styles.lessonButtonCompleted,
+                      ]}
+                      accessibilityRole="button"
+                      accessibilityLabel={`Lesson ${lesson.num}: ${lesson.english}${
+                        completed ? ', completed' : unlocked ? '' : ', locked'
+                      }`}
+                      onPress={() => handleStartLearning(lesson.num)}
+                      disabled={!unlocked}>
+                      <View style={styles.lessonNumberBadge}>
+                        <Text style={styles.lessonNumberText}>
+                          {completed ? '✓' : lesson.num}
+                        </Text>
+                      </View>
+                      <Text style={styles.lessonTitleJapanese}>
+                        {lesson.title}
+                      </Text>
+                      <Text style={styles.lessonTitleEnglish} numberOfLines={2}>
+                        {lesson.english}
+                      </Text>
+                      {!unlocked && (
+                        <Text style={styles.lockedIcon}>🔒</Text>
+                      )}
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </>
+          ) : (
+            <View style={styles.plannedCard}>
+              <Text style={styles.plannedTitle}>
+                🔒 {activeLevelInfo.level} lessons are planned, not built yet
+              </Text>
+              <Text style={styles.plannedText}>
+                We don't want to overclaim: there is no{' '}
+                {activeLevelInfo.level} lesson content in the app today. This
+                roadmap slot shows what is planned so progress stays honest.
+              </Text>
+            </View>
+          )}
         </ScrollView>
 
         <View style={styles.footer}>
@@ -1029,7 +1274,7 @@ const App = () => {
   if (screen === 'lesson') {
     const currentLesson = lessonData.find((l) => l.num === selectedLesson);
     const content = lessonContent[selectedLesson] || lessonContent[1];
-    
+
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor="#58CC02" />
@@ -1037,6 +1282,11 @@ const App = () => {
           <Text style={styles.headerText}>📚 Lesson {selectedLesson}</Text>
           <Text style={styles.subtitle}>
             {currentLesson?.title} - {currentLesson?.english}
+          </Text>
+          <Text
+            style={styles.headerHearts}
+            accessibilityLabel={`${hearts} of ${STARTING_HEARTS} hearts remaining`}>
+            {heartsDisplay}
           </Text>
         </View>
 
@@ -1063,9 +1313,29 @@ const App = () => {
             ))}
           </View>
 
-          <TouchableOpacity style={styles.button} onPress={handleStartQuiz}>
-            <Text style={styles.buttonText}>START QUIZ</Text>
-          </TouchableOpacity>
+          {hearts > 0 ? (
+            <TouchableOpacity
+              style={styles.button}
+              accessibilityRole="button"
+              onPress={handleStartQuiz}>
+              <Text style={styles.buttonText}>START QUIZ</Text>
+            </TouchableOpacity>
+          ) : (
+            <View style={styles.noHeartsCard}>
+              <Text style={styles.noHeartsTitle}>💔 Out of hearts</Text>
+              <Text style={styles.noHeartsText}>
+                You need at least one heart to start a quiz. Refill to keep
+                practicing.
+              </Text>
+              <TouchableOpacity
+                style={styles.button}
+                accessibilityRole="button"
+                accessibilityLabel="Refill hearts"
+                onPress={handleRefillHearts}>
+                <Text style={styles.buttonText}>REFILL HEARTS</Text>
+              </TouchableOpacity>
+            </View>
+          )}
 
           <TouchableOpacity style={styles.backButton} onPress={handleBackToHome}>
             <Text style={styles.backButtonText}>← Back to Home</Text>
@@ -1079,7 +1349,7 @@ const App = () => {
   if (screen === 'quiz') {
     const currentQuestion = currentQuizQuestions[currentQuestionIndex];
     const percentage = Math.round((score / currentQuizQuestions.length) * 100);
-    const passed = percentage >= 70;
+    const passed = percentage >= PASS_THRESHOLD;
 
     return (
       <SafeAreaView style={styles.container}>
@@ -1089,6 +1359,11 @@ const App = () => {
             {quizCompleted ? (passed ? '🎉 Quiz Complete!' : '📝 Quiz Complete') : `✏️ Quiz ${currentQuestionIndex + 1}/${currentQuizQuestions.length}`}
           </Text>
           <Text style={styles.subtitle}>Score: {score} | XP: {xp}</Text>
+          <Text
+            style={styles.headerHearts}
+            accessibilityLabel={`${hearts} of ${STARTING_HEARTS} hearts remaining`}>
+            {heartsDisplay}
+          </Text>
         </View>
 
         <ScrollView style={styles.content}>
@@ -1199,24 +1474,47 @@ const App = () => {
                 {passed ? (
                   <View style={styles.passCard}>
                     <Text style={styles.passText}>
-                      ✅ Quiz Passed! You scored above 70%
+                      ✅ Quiz Passed! You scored at or above {PASS_THRESHOLD}%
                     </Text>
+                    {completedLessons.includes(selectedLesson) && (
+                      <Text style={styles.passSubText}>
+                        Lesson {selectedLesson} marked complete
+                        {hasLoggedStreakToday ? ' · 🔥 Streak updated' : ''}
+                      </Text>
+                    )}
                   </View>
                 ) : (
                   <View style={styles.failCard}>
                     <Text style={styles.failText}>
-                      Keep studying! Try to score above 70%
+                      Keep studying! Try to score at or above {PASS_THRESHOLD}%
                     </Text>
                   </View>
                 )}
               </View>
 
               {/* Action Buttons */}
-              <TouchableOpacity
-                style={styles.button}
-                onPress={handleRetryQuiz}>
-                <Text style={styles.buttonText}>TRY AGAIN</Text>
-              </TouchableOpacity>
+              {hearts > 0 ? (
+                <TouchableOpacity
+                  style={styles.button}
+                  accessibilityRole="button"
+                  onPress={handleRetryQuiz}>
+                  <Text style={styles.buttonText}>TRY AGAIN</Text>
+                </TouchableOpacity>
+              ) : (
+                <View style={styles.noHeartsCard}>
+                  <Text style={styles.noHeartsTitle}>💔 Out of hearts</Text>
+                  <Text style={styles.noHeartsText}>
+                    Refill your hearts before retrying this quiz.
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.button}
+                    accessibilityRole="button"
+                    accessibilityLabel="Refill hearts"
+                    onPress={handleRefillHearts}>
+                    <Text style={styles.buttonText}>REFILL HEARTS</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
 
               <TouchableOpacity
                 style={styles.backButton}
@@ -1254,6 +1552,11 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     marginTop: 5,
     opacity: 0.9,
+  },
+  headerHearts: {
+    fontSize: 18,
+    marginTop: 10,
+    letterSpacing: 2,
   },
   content: {
     flex: 1,
@@ -1301,6 +1604,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#58CC02',
+  },
+  statHearts: {
+    fontSize: 18,
+    letterSpacing: 1,
   },
   statLabel: {
     fontSize: 12,
@@ -1360,6 +1667,132 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 10,
   },
+  // Daily quest styles
+  questCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 20,
+    borderWidth: 2,
+    borderColor: '#FFC800',
+  },
+  questHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  questTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  questSubtitle: {
+    fontSize: 14,
+    color: '#FFC800',
+    fontWeight: 'bold',
+  },
+  questProgressTrack: {
+    height: 10,
+    backgroundColor: '#2A3C44',
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  questProgressFill: {
+    height: '100%',
+    backgroundColor: '#FFC800',
+  },
+  // JLPT level selector styles
+  levelSelectorRow: {
+    marginBottom: 15,
+  },
+  levelTab: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    marginRight: 10,
+    borderWidth: 2,
+    borderColor: '#2A3C44',
+    alignItems: 'center',
+    minWidth: 90,
+  },
+  levelTabActive: {
+    borderColor: '#58CC02',
+    backgroundColor: 'rgba(88, 204, 2, 0.12)',
+  },
+  levelTabPlanned: {
+    opacity: 0.6,
+  },
+  levelTabTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#AFAFAF',
+  },
+  levelTabTitleActive: {
+    color: '#58CC02',
+  },
+  levelTabSubtitle: {
+    fontSize: 11,
+    color: '#AFAFAF',
+    marginTop: 2,
+  },
+  levelTabLocked: {
+    fontSize: 10,
+    color: '#FF9E4B',
+    marginTop: 4,
+  },
+  roadmapGoalCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 20,
+  },
+  roadmapGoalTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#58CC02',
+    marginBottom: 6,
+  },
+  roadmapGoalText: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    lineHeight: 20,
+    marginBottom: 10,
+  },
+  roadmapTopicsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  roadmapTopicChip: {
+    backgroundColor: '#0D1418',
+    borderRadius: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  roadmapTopicText: {
+    fontSize: 12,
+    color: '#FFFFFF',
+  },
+  plannedCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 20,
+    borderWidth: 2,
+    borderColor: '#2A3C44',
+  },
+  plannedTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FF9E4B',
+    marginBottom: 8,
+  },
+  plannedText: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    lineHeight: 20,
+  },
   lessonButton: {
     backgroundColor: '#1A2C34',
     borderRadius: 16,
@@ -1373,6 +1806,10 @@ const styles = StyleSheet.create({
   lessonButtonLocked: {
     borderColor: '#2A3C44',
     opacity: 0.5,
+  },
+  lessonButtonCompleted: {
+    borderColor: '#FFC800',
+    backgroundColor: 'rgba(255, 200, 0, 0.08)',
   },
   lessonNumberBadge: {
     backgroundColor: '#58CC02',
@@ -1645,6 +2082,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
   },
+  passSubText: {
+    fontSize: 13,
+    color: '#58CC02',
+    textAlign: 'center',
+    marginTop: 6,
+  },
   failCard: {
     marginTop: 20,
     padding: 15,
@@ -1675,6 +2118,27 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#AFAFAF',
     marginTop: 5,
+  },
+  noHeartsCard: {
+    backgroundColor: '#1A2C34',
+    borderRadius: 16,
+    padding: 20,
+    alignItems: 'center',
+    marginBottom: 20,
+    borderWidth: 2,
+    borderColor: '#FF4B4B',
+  },
+  noHeartsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FF4B4B',
+    marginBottom: 8,
+  },
+  noHeartsText: {
+    fontSize: 14,
+    color: '#AFAFAF',
+    textAlign: 'center',
+    marginBottom: 15,
   },
 });
 
