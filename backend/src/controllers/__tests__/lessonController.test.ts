@@ -26,18 +26,18 @@ describe('LessonController#getAllLessons level filtering', () => {
     await controller.getAllLessons(req, res, next);
 
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ success: true, count: 25 })
+      expect.objectContaining({ success: true, count: 40 })
     );
   });
 
   it('filters lessons by a valid level (case-insensitive)', async () => {
-    const req = { query: { level: 'n5' } } as unknown as AuthRequest;
+    const req = { query: { level: 'n3' } } as unknown as AuthRequest;
     const res = mockResponse();
 
     await controller.getAllLessons(req, res, next);
 
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ success: true, count: 15 })
+      expect.objectContaining({ success: true, count: 5 })
     );
   });
 

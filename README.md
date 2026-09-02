@@ -8,12 +8,12 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
 </p>
 
-A modern Japanese language learning application inspired by Duolingo, organized around the **JLPT N5 → N1 roadmap**. Today the app ships **25 original lessons** (self-written grammar explanations, vocabulary, and quizzes) covering the elementary/beginner grammar generally associated with **N5 and N4**. N3, N2, and N1 are shown as a visible, honest roadmap of *planned* levels — the app does not claim lesson content it doesn't have.
+A modern Japanese language learning application inspired by Duolingo, organized around the **JLPT N5 → N1 roadmap**. Today the app ships **40 original lessons** (self-written grammar explanations, vocabulary, and quizzes) spanning beginner through advanced study. Lessons **1-25** cover the elementary/beginner grammar generally associated with **N5 and N4**, and lessons **26-40** add original **N3, N2, and N1** roadmap content for intermediate and advanced practice.
 
 ## ✨ Features
 
-- 🗾 **JLPT N5 → N1 Roadmap** - Level selector shows goals/topics for every level; N5/N4 are playable today, N3-N1 are clearly marked "planned" (locked, no fake content)
-- 📚 **25 Original Lessons** - Self-written grammar points, vocabulary, and quizzes inspired by common beginner Japanese curricula (see [Content Attribution](#-content-attribution))
+- 🗾 **JLPT N5 → N1 Roadmap** - Level selector shows playable lesson paths and goals/topics for every level from N5 through N1
+- 📚 **40 Original Lessons** - Self-written grammar points, vocabulary, and quizzes covering N5-N1 roadmap study (see [Content Attribution](#-content-attribution))
 - 🎯 **Interactive Quizzes** - 5 questions per lesson (vocabulary + grammar), shuffled options and wrong-answer pools
 - 🔀 **Randomized Questions** - Different question order and distractors each attempt
 - ✅ **Instant Feedback** - See correct/incorrect answers immediately, with explanations
@@ -30,13 +30,13 @@ A modern Japanese language learning application inspired by Duolingo, organized 
 |-------|--------|------|-----------------|
 | N5 | ✅ Available (lessons 1-15) | Read basic hiragana/katakana and build simple sentences | は/です sentences, basic particles, everyday vocabulary |
 | N4 | ✅ Available (lessons 16-25) | Handle everyday conversations with more natural grammar | て-form requests, giving & receiving, past/plain forms |
-| N3 | 🔒 Planned | Follow everyday Japanese at a natural pace | Conditional forms, passive/causative basics, ~650 kanji |
-| N2 | 🔒 Planned | Understand news, workplace Japanese, abstract topics | Formal/keigo basics, complex grammar, ~1000 kanji |
-| N1 | 🔒 Planned | Understand nuanced, academic, literary Japanese | Advanced nuance, business Japanese, ~2000 kanji |
+| N3 | ✅ Available (lessons 26-30) | Follow everyday Japanese at a natural pace | Conditional forms, passive/causative basics, preparation patterns |
+| N2 | ✅ Available (lessons 31-35) | Understand news, workplace Japanese, abstract topics | Formal/keigo basics, reports, complex grammar |
+| N1 | ✅ Available (lessons 36-40) | Understand nuanced, academic, literary Japanese | Advanced nuance, formal writing, business/essay expressions |
 
-The lesson → JLPT level mapping (lessons 1-15 → N5, 16-25 → N4) is a **defensible approximation**, not an official JLPT certification — see [Content Attribution](#-content-attribution).
+The lesson → JLPT level mapping (lessons 1-15 → N5, 16-25 → N4, 26-30 → N3, 31-35 → N2, 36-40 → N1) is a **defensible approximation**, not an official JLPT certification — see [Content Attribution](#-content-attribution).
 
-## 📖 Lesson Content (N5 & N4, available today)
+## 📖 Lesson Content (N5-N1, available today)
 
 | Lessons | JLPT Level | Topics Covered |
 |---------|-----------|----------------|
@@ -45,6 +45,9 @@ The lesson → JLPT level mapping (lessons 1-15 → N5, 16-25 → N4) is a **def
 | 11-15 | N5 | Counters, past tense, comparisons, desire (たい form), te-form |
 | 16-20 | N4 | Connecting sentences, prohibitions, potential form, experience, plain form |
 | 21-25 | N4 | Quotations, giving advice, conditionals, causative, passive form |
+| 26-30 | N3 | なら/ば/たら conditionals, passive, causative, ように, ておく |
+| 31-35 | N2 | Honorific and humble speech, forecasts/reports, polite refusal, べきだ, に違いない |
+| 36-40 | N1 | ものの, とはいえ, にもかかわらず, ざるをえない, というものだ |
 
 ## 🎮 Game Mechanics
 
@@ -131,7 +134,7 @@ jplingo/
 
 ## 🎮 How to Use
 
-1. **Pick a JLPT Level** - Use the N5-N1 roadmap tabs on the home screen; N5/N4 have playable lessons, N3-N1 show planned goals
+1. **Pick a JLPT Level** - Use the N5-N1 roadmap tabs on the home screen; every level now has playable lessons and roadmap goals
 2. **Select a Lesson** - Choose an unlocked lesson from the level's lesson grid
 3. **Learn Content** - Review grammar points and vocabulary
 4. **Start Quiz** - Click "Start Quiz" to begin (requires at least 1 heart)
@@ -192,7 +195,7 @@ docker-compose down
 | GET | `/api/lessons/:id/exercises` | Get exercises for a lesson |
 | POST | `/api/progress` | Save user progress |
 
-Every lesson response now includes a `jlptLevel` field (`"N5"` or `"N4"` for the bundled content). Requesting a level with no bundled lessons yet (e.g. `?level=N3`) is a **valid** request that returns an empty `data` array, not an error — only unrecognized level strings return `400`.
+Every lesson response now includes a `jlptLevel` field (`"N5"`, `"N4"`, `"N3"`, `"N2"`, or `"N1"` depending on the bundled lesson). Level filters return the matching bundled lessons for that roadmap stage, and only unrecognized level strings return `400`.
 
 ## 🤝 Contributing
 
@@ -212,9 +215,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 All grammar explanations, example sentences, vocabulary lists, and quiz questions in this repository are **original content written for this project**. No text, audio, or datasets have been copied from Minna No Nihongo, other textbooks, or third-party repositories.
 
-- The lesson *topic sequence* (e.g. covering は/です before te-form, then potential/causative forms) is loosely **inspired by** common beginner Japanese curricula, including the well-known Minna No Nihongo series — this is standard pedagogical ordering, not reproduced text.
-- The lesson → JLPT level mapping (lessons 1-15 → N5, 16-25 → N4) is a **defensible in-app approximation** created for this roadmap. It is not an official JLPT syllabus mapping, and passing these lessons does not certify JLPT readiness.
-- N3, N2, and N1 have **no lesson content today**. They appear in the roadmap UI and API only as clearly labeled, locked "planned" levels so the app never overclaims what it can teach.
+- The lesson *topic sequence* (e.g. covering は/です before te-form, then potential/causative forms, then keigo and advanced written nuance) is loosely **inspired by** common Japanese curricula and roadmap expectations — this is standard pedagogical ordering, not reproduced text.
+- Lessons 1-25 remain loosely inspired by the well-known Minna No Nihongo beginner progression, while lessons 26-40 are original intermediate/advanced extensions written specifically for this app.
+- The lesson → JLPT level mapping (lessons 1-15 → N5, 16-25 → N4, 26-30 → N3, 31-35 → N2, 36-40 → N1) is a **defensible in-app approximation** created for this roadmap. It is not an official JLPT syllabus mapping, and passing these lessons does not certify JLPT readiness.
 
 ## 🙏 Acknowledgments
 

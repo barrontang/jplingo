@@ -1,0 +1,437 @@
+[
+  {
+    "lessonNumber": 31,
+    "title": "The manager will return",
+    "titleJapanese": "部長がお戻りになります",
+    "description": "Honorific language for customers, teachers, and superiors",
+    "difficulty": 7,
+    "xpReward": 125,
+    "order": 31,
+    "isUnlocked": false,
+    "jlptLevel": "N2",
+    "grammarPoints": [
+      {
+        "title": "お/ご〜になる",
+        "explanation": "Use お/ご〜になる to speak respectfully about the actions of someone of higher status or a customer.",
+        "examples": [
+          "先生は何時にお着きになりますか。(What time will the teacher arrive?)",
+          "お客様はこちらでお待ちになります。(The customer will wait here.)"
+        ]
+      },
+      {
+        "title": "尊敬語の特別形",
+        "explanation": "Certain common verbs use special honorific forms instead of regular conjugation patterns.",
+        "examples": [
+          "どうぞこちらで召し上がってください。(Please eat here.)",
+          "部長はその件についてご存じです。(The manager knows about that matter.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "部長",
+        "hiragana": "ぶちょう",
+        "romaji": "buchou",
+        "english": "department manager",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "お客様",
+        "hiragana": "おきゃくさま",
+        "romaji": "okyakusama",
+        "english": "customer, guest",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "会議室",
+        "hiragana": "かいぎしつ",
+        "romaji": "kaigishitsu",
+        "english": "meeting room",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "案内する",
+        "hiragana": "あんないする",
+        "romaji": "annai suru",
+        "english": "to guide",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "お戻りになる",
+        "hiragana": "おもどりになる",
+        "romaji": "omodori ni naru",
+        "english": "to return (honorific)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "召し上がる",
+        "hiragana": "めしあがる",
+        "romaji": "meshiagaru",
+        "english": "to eat, drink (honorific)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "なさる",
+        "hiragana": "なさる",
+        "romaji": "nasaru",
+        "english": "to do (honorific)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "いらっしゃる",
+        "hiragana": "いらっしゃる",
+        "romaji": "irassharu",
+        "english": "to be/go/come (honorific)",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 32,
+    "title": "I will look at the materials",
+    "titleJapanese": "資料を拝見いたします",
+    "description": "Humble language for speaking politely about your own actions",
+    "difficulty": 7,
+    "xpReward": 125,
+    "order": 32,
+    "isUnlocked": false,
+    "jlptLevel": "N2",
+    "grammarPoints": [
+      {
+        "title": "お/ご〜する",
+        "explanation": "Use お/ご〜する when politely describing what you will do for someone else.",
+        "examples": [
+          "荷物は私がお持ちします。(I will carry the luggage.)",
+          "あとでご連絡します。(I will contact you later.)"
+        ]
+      },
+      {
+        "title": "謙譲語の特別形",
+        "explanation": "Certain common verbs use special humble forms in formal and workplace settings.",
+        "examples": [
+          "資料を拝見いたします。(I will look over the materials.)",
+          "その件は明日申し上げます。(I will mention that matter tomorrow.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "資料",
+        "hiragana": "しりょう",
+        "romaji": "shiryou",
+        "english": "materials, documents",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "拝見する",
+        "hiragana": "はいけんする",
+        "romaji": "haiken suru",
+        "english": "to look at (humble)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "伺う",
+        "hiragana": "うかがう",
+        "romaji": "ukagau",
+        "english": "to visit, ask, hear (humble)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "申し上げる",
+        "hiragana": "もうしあげる",
+        "romaji": "moushiageru",
+        "english": "to say (humble)",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "持参する",
+        "hiragana": "じさんする",
+        "romaji": "jisan suru",
+        "english": "to bring",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "恐れ入ります",
+        "hiragana": "おそれいります",
+        "romaji": "osoreirimasu",
+        "english": "I am sorry to trouble you",
+        "partOfSpeech": "phrase"
+      },
+      {
+        "japanese": "早速",
+        "hiragana": "さっそく",
+        "romaji": "sassoku",
+        "english": "at once, promptly",
+        "partOfSpeech": "adverb"
+      },
+      {
+        "japanese": "確認いたします",
+        "hiragana": "かくにんいたします",
+        "romaji": "kakunin itashimasu",
+        "english": "I will confirm (humble)",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 33,
+    "title": "The meeting is expected to be postponed",
+    "titleJapanese": "会議は延期される見込みです",
+    "description": "Formal expressions used in news, reports, and announcements",
+    "difficulty": 8,
+    "xpReward": 130,
+    "order": 33,
+    "isUnlocked": false,
+    "jlptLevel": "N2",
+    "grammarPoints": [
+      {
+        "title": "〜見込みだ",
+        "explanation": "Use 〜見込みだ for predictions and projections in reports, news, and business updates.",
+        "examples": [
+          "会議は延期される見込みです。(The meeting is expected to be postponed.)",
+          "今年の観光客は増える見込みです。(The number of tourists is expected to increase this year.)"
+        ]
+      },
+      {
+        "title": "〜ことになる",
+        "explanation": "Use 〜ことになる when an organization, rule, or outside decision determines the outcome.",
+        "examples": [
+          "会議はオンラインで行うことになりました。(It has been decided that the meeting will be held online.)",
+          "来週から担当者が変わることになっています。(It is arranged that the person in charge will change from next week.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "延期する",
+        "hiragana": "えんきする",
+        "romaji": "enki suru",
+        "english": "to postpone",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "見込み",
+        "hiragana": "みこみ",
+        "romaji": "mikomi",
+        "english": "outlook, expectation",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "方針",
+        "hiragana": "ほうしん",
+        "romaji": "houshin",
+        "english": "policy, plan",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "傾向",
+        "hiragana": "けいこう",
+        "romaji": "keikou",
+        "english": "trend",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "景気",
+        "hiragana": "けいき",
+        "romaji": "keiki",
+        "english": "business conditions, economy",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "改善する",
+        "hiragana": "かいぜんする",
+        "romaji": "kaizen suru",
+        "english": "to improve",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "影響",
+        "hiragana": "えいきょう",
+        "romaji": "eikyou",
+        "english": "influence, impact",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "制度",
+        "hiragana": "せいど",
+        "romaji": "seido",
+        "english": "system, institution",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 34,
+    "title": "I cannot agree to this proposal",
+    "titleJapanese": "この案には賛成しかねます",
+    "description": "Nuanced disagreement and partial negation in formal settings",
+    "difficulty": 8,
+    "xpReward": 130,
+    "order": 34,
+    "isUnlocked": false,
+    "jlptLevel": "N2",
+    "grammarPoints": [
+      {
+        "title": "〜かねる",
+        "explanation": "Use 〜かねる for polite refusals or when something is difficult or impossible in business contexts.",
+        "examples": [
+          "この案には賛成しかねます。(I cannot agree to this proposal.)",
+          "個人情報についてはお答えしかねます。(I cannot answer questions about personal information.)"
+        ]
+      },
+      {
+        "title": "〜わけではない",
+        "explanation": "Use 〜わけではない to deny an overly broad interpretation without rejecting everything completely.",
+        "examples": [
+          "彼を疑っているわけではありません。(It is not that I doubt him.)",
+          "忙しいからといって何もしないわけにはいきません。(Even if I am busy, it does not mean I can do nothing.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "賛成する",
+        "hiragana": "さんせいする",
+        "romaji": "sansei suru",
+        "english": "to agree",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "反対する",
+        "hiragana": "はんたいする",
+        "romaji": "hantai suru",
+        "english": "to oppose",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "提案",
+        "hiragana": "ていあん",
+        "romaji": "teian",
+        "english": "proposal",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "判断",
+        "hiragana": "はんだん",
+        "romaji": "handan",
+        "english": "judgment, decision",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "慎重",
+        "hiragana": "しんちょう",
+        "romaji": "shinchou",
+        "english": "careful, prudent",
+        "partOfSpeech": "adjective"
+      },
+      {
+        "japanese": "誤解",
+        "hiragana": "ごかい",
+        "romaji": "gokai",
+        "english": "misunderstanding",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "事情",
+        "hiragana": "じじょう",
+        "romaji": "jijou",
+        "english": "circumstances",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "対応する",
+        "hiragana": "たいおうする",
+        "romaji": "taiou suru",
+        "english": "to respond, handle",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 35,
+    "title": "We should consider it more",
+    "titleJapanese": "もっと検討すべきです",
+    "description": "Strong recommendations and logical certainty for advanced discussion",
+    "difficulty": 8,
+    "xpReward": 135,
+    "order": 35,
+    "isUnlocked": false,
+    "jlptLevel": "N2",
+    "grammarPoints": [
+      {
+        "title": "〜べきだ",
+        "explanation": "Use 〜べきだ when giving strong advice or stating what is appropriate or expected.",
+        "examples": [
+          "もっと検討すべきです。(We should consider it more.)",
+          "約束したことは守るべきです。(You should keep what you promised.)"
+        ]
+      },
+      {
+        "title": "〜に違いない",
+        "explanation": "Use 〜に違いない to express a strong logical conclusion based on evidence or confidence.",
+        "examples": [
+          "あの人は経験が豊富に違いない。(That person must have a lot of experience.)",
+          "こんな結果になるとは誰も思わなかったに違いない。(Surely no one expected this result.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "検討する",
+        "hiragana": "けんとうする",
+        "romaji": "kentou suru",
+        "english": "to consider",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "効率",
+        "hiragana": "こうりつ",
+        "romaji": "kouritsu",
+        "english": "efficiency",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "義務",
+        "hiragana": "ぎむ",
+        "romaji": "gimu",
+        "english": "duty, obligation",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "証拠",
+        "hiragana": "しょうこ",
+        "romaji": "shouko",
+        "english": "evidence",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "責任感",
+        "hiragana": "せきにんかん",
+        "romaji": "sekininkan",
+        "english": "sense of responsibility",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "改善策",
+        "hiragana": "かいぜんさく",
+        "romaji": "kaizensaku",
+        "english": "improvement measure",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "結論",
+        "hiragana": "けつろん",
+        "romaji": "ketsuron",
+        "english": "conclusion",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "豊富",
+        "hiragana": "ほうふ",
+        "romaji": "houfu",
+        "english": "abundant, rich",
+        "partOfSpeech": "adjective"
+      }
+    ]
+  }
+]

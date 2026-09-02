@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import { advancedLessonContent, advancedLessonData } from './src/data/advancedLessons';
 
 type Screen = 'home' | 'lesson' | 'quiz' | 'result';
 
@@ -19,9 +20,10 @@ interface QuizQuestion {
   explanation: string;
 }
 
-// JLPT roadmap: JPLingo content today only covers Minna No Nihongo lessons
-// 1-25, which map (approximately, not officially) to N5 and N4. N3-N1 are
-// shown as a visible, honest "planned" roadmap with no lesson content yet.
+// JLPT roadmap: lessons 1-25 follow the original beginner roadmap and lessons
+// 26-40 extend the path with original N3-N1 content for intermediate through
+// advanced study. The JLPT mapping remains an in-app approximation, not an
+// official exam syllabus.
 type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
 
 interface JlptRoadmapEntry {
@@ -52,21 +54,21 @@ const JLPT_ROADMAP: JlptRoadmapEntry[] = [
     name: 'Intermediate',
     goal: 'Follow everyday Japanese at a natural pace.',
     topics: ['Conditional forms', 'Passive/causative basics', '~650 kanji'],
-    available: false,
+    available: true,
   },
   {
     level: 'N2',
     name: 'Upper-Intermediate',
     goal: 'Understand news, workplace Japanese, and abstract topics.',
     topics: ['Formal/keigo basics', 'Complex grammar', '~1000 kanji'],
-    available: false,
+    available: true,
   },
   {
     level: 'N1',
     name: 'Advanced',
     goal: 'Understand nuanced, academic, and literary Japanese.',
     topics: ['Advanced nuance', 'Business Japanese', '~2000 kanji'],
-    available: false,
+    available: true,
   },
 ];
 
@@ -729,6 +731,7 @@ const lessonContent: Record<number, {
       { japanese: 'おかげさまで', romaji: 'okagesama de', english: 'thanks to you' },
     ],
   },
+  ...advancedLessonContent,
 };
 
 // Function to generate quiz questions from lesson content
@@ -914,11 +917,16 @@ const quizQuestions: QuizQuestion[] = [
   },
 ];
 
-// Lesson data for the 25 lessons that exist today. `jlptLevel` mirrors the
-// backend's approximation: lessons 1-15 (core elementary grammar) map to N5,
-// lessons 16-25 (more complex structures) map to N4. See README for caveats.
-const deriveJlptLevel = (lessonNum: number): JlptLevel =>
-  lessonNum <= 15 ? 'N5' : 'N4';
+// Lesson data now spans N5-N1. The ranges remain a curated in-app roadmap,
+// not an official JLPT syllabus: 1-15 → N5, 16-25 → N4, 26-30 → N3,
+// 31-35 → N2, and 36-40 → N1.
+const deriveJlptLevel = (lessonNum: number): JlptLevel => {
+  if (lessonNum <= 15) return 'N5';
+  if (lessonNum <= 25) return 'N4';
+  if (lessonNum <= 30) return 'N3';
+  if (lessonNum <= 35) return 'N2';
+  return 'N1';
+};
 
 const lessonData = [
   { num: 1, title: 'はじめまして', english: 'Nice to meet you' },
@@ -946,6 +954,7 @@ const lessonData = [
   { num: 23, title: 'どうやって行きますか', english: 'How do you get there?' },
   { num: 24, title: '手伝いましょうか', english: 'Shall I help?' },
   { num: 25, title: 'いろいろお世話になりました', english: 'Thank you for everything' },
+  ...advancedLessonData,
 ].map(lesson => ({ ...lesson, jlptLevel: deriveJlptLevel(lesson.num) }));
 
 const App = () => {
