@@ -1,10 +1,30 @@
 import { Response, NextFunction } from 'express';
 import { AuthRequest } from '../middleware/auth';
-import { lessonService } from '../services/lessonService';
+import { JLPT_LEVELS, isJlptLevel, lessonService } from '../services/lessonService';
 
 export class LessonController {
-  async getAllLessons(_req: AuthRequest, res: Response, next: NextFunction) {
+  async getAllLessons(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
     try {
+      const { level } = req.query;
+
+      if (level !== undefined) {
+        if (typeof level !== 'string' || !isJlptLevel(level.toUpperCase())) {
+          res.status(400).json({
+            success: false,
+            error: `Invalid level. Must be one of: ${JLPT_LEVELS.join(', ')}`,
+          });
+          return;
+        }
+
+        const lessons = lessonService.getLessonsByLevel(level.toUpperCase() as (typeof JLPT_LEVELS)[number]);
+        res.json({
+          success: true,
+          count: lessons.length,
+          data: lessons,
+        });
+        return;
+      }
+
       const lessons = lessonService.getAllLessons();
       res.json({
         success: true,

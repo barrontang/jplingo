@@ -15,6 +15,10 @@ interface GrammarPoint {
   examples: string[];
 }
 
+// JLPT roadmap levels, ordered from easiest to hardest.
+const JLPT_LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1'] as const;
+type JlptLevel = (typeof JLPT_LEVELS)[number];
+
 interface Lesson {
   lessonNumber: number;
   title: string;
@@ -24,8 +28,23 @@ interface Lesson {
   xpReward: number;
   order: number;
   isUnlocked: boolean;
+  jlptLevel: JlptLevel;
   grammarPoints: GrammarPoint[];
   vocabulary: Vocabulary[];
+}
+
+// The bundled lessons are adapted from Minna No Nihongo Book I (lessons 1-25).
+// That book is not aligned 1:1 with official JLPT syllabuses, so this mapping is
+// a defensible approximation rather than an authoritative JLPT certification:
+// lessons 1-15 cover the core elementary grammar generally associated with N5,
+// while lessons 16-25 introduce more complex structures (て-form requests,
+// giving/receiving, experience, volitional form, opinions) that trend toward N4.
+function deriveJlptLevel(lessonNumber: number): JlptLevel {
+  return lessonNumber <= 15 ? 'N5' : 'N4';
+}
+
+function isJlptLevel(value: string): value is JlptLevel {
+  return (JLPT_LEVELS as readonly string[]).includes(value);
 }
 
 class LessonService {
@@ -56,8 +75,17 @@ class LessonService {
         allLessons.push(...lessons);
       }
 
+      // Tag each lesson with its JLPT roadmap level so consistent N5/N4 labels
+      // are applied even if the source JSON files don't define one.
+      const taggedLessons = allLessons.map(lesson => ({
+        ...lesson,
+        jlptLevel: lesson.jlptLevel && isJlptLevel(lesson.jlptLevel)
+          ? lesson.jlptLevel
+          : deriveJlptLevel(lesson.lessonNumber),
+      }));
+
       // Sort by lesson number
-      this.lessons = allLessons.sort((a, b) => a.lessonNumber - b.lessonNumber);
+      this.lessons = taggedLessons.sort((a, b) => a.lessonNumber - b.lessonNumber);
       this.loaded = true;
 
       console.log(`✅ Loaded ${this.lessons.length} lessons successfully`);
@@ -94,6 +122,10 @@ class LessonService {
     return this.lessons.filter(lesson => lesson.difficulty === difficulty);
   }
 
+  getLessonsByLevel(level: JlptLevel): Lesson[] {
+    return this.lessons.filter(lesson => lesson.jlptLevel === level);
+  }
+
   getUnlockedLessons(): Lesson[] {
     return this.lessons.filter(lesson => lesson.isUnlocked);
   }
@@ -115,4 +147,5 @@ class LessonService {
 
 // Export singleton instance
 export const lessonService = new LessonService();
-export type { Lesson, Vocabulary, GrammarPoint };
+export type { Lesson, Vocabulary, GrammarPoint, JlptLevel };
+export { JLPT_LEVELS, isJlptLevel, deriveJlptLevel };
