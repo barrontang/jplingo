@@ -1,0 +1,437 @@
+[
+  {
+    "lessonNumber": 26,
+    "title": "If I have time, I will join",
+    "titleJapanese": "時間があれば参加します",
+    "description": "Conditional forms with なら and ば for everyday decisions",
+    "difficulty": 6,
+    "xpReward": 110,
+    "order": 26,
+    "isUnlocked": false,
+    "jlptLevel": "N3",
+    "grammarPoints": [
+      {
+        "title": "〜なら",
+        "explanation": "Use 〜なら to react to a condition, topic, or assumption already under discussion.",
+        "examples": [
+          "雨なら家で勉強します。(If it rains, I will study at home.)",
+          "駅に近いならそのホテルにします。(If it is near the station, I will choose that hotel.)"
+        ]
+      },
+      {
+        "title": "〜ば",
+        "explanation": "Use 〜ば to express a conditional result, especially for general or logical consequences.",
+        "examples": [
+          "時間があれば参加します。(If I have time, I will join.)",
+          "早く寝れば明日は元気です。(If you sleep early, you will feel well tomorrow.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "時間",
+        "hiragana": "じかん",
+        "romaji": "jikan",
+        "english": "time",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "参加する",
+        "hiragana": "さんかする",
+        "romaji": "sanka suru",
+        "english": "to participate",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "予定",
+        "hiragana": "よてい",
+        "romaji": "yotei",
+        "english": "schedule, plan",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "変更する",
+        "hiragana": "へんこうする",
+        "romaji": "henkou suru",
+        "english": "to change, revise",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "間に合う",
+        "hiragana": "まにあう",
+        "romaji": "maniau",
+        "english": "to be in time",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "連絡する",
+        "hiragana": "れんらくする",
+        "romaji": "renraku suru",
+        "english": "to contact",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "たぶん",
+        "hiragana": "たぶん",
+        "romaji": "tabun",
+        "english": "probably",
+        "partOfSpeech": "adverb"
+      },
+      {
+        "japanese": "都合",
+        "hiragana": "つごう",
+        "romaji": "tsugou",
+        "english": "convenience, availability",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 27,
+    "title": "If I have time, I will review",
+    "titleJapanese": "時間があったら復習します",
+    "description": "Using たら and ても to express conditions and contrasts",
+    "difficulty": 6,
+    "xpReward": 110,
+    "order": 27,
+    "isUnlocked": false,
+    "jlptLevel": "N3",
+    "grammarPoints": [
+      {
+        "title": "〜たら",
+        "explanation": "Use 〜たら to express a condition or sequence after something happens or becomes true.",
+        "examples": [
+          "駅に着いたら電話してください。(Please call me when you arrive at the station.)",
+          "暇だったらいっしょに散歩しませんか。(If you are free, would you like to take a walk together?)"
+        ]
+      },
+      {
+        "title": "〜ても",
+        "explanation": "Use 〜ても to show that a result holds true even when a condition changes.",
+        "examples": [
+          "雨が降っても試合はあります。(Even if it rains, the game will take place.)",
+          "忙しくても毎日少し日本語を勉強します。(Even if I am busy, I study a little Japanese every day.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "復習する",
+        "hiragana": "ふくしゅうする",
+        "romaji": "fukushuu suru",
+        "english": "to review",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "予習する",
+        "hiragana": "よしゅうする",
+        "romaji": "yoshuu suru",
+        "english": "to prepare for a lesson",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "散歩する",
+        "hiragana": "さんぽする",
+        "romaji": "sanpo suru",
+        "english": "to take a walk",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "途中",
+        "hiragana": "とちゅう",
+        "romaji": "tochuu",
+        "english": "on the way, midway",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "遅れる",
+        "hiragana": "おくれる",
+        "romaji": "okureru",
+        "english": "to be late",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "眠い",
+        "hiragana": "ねむい",
+        "romaji": "nemui",
+        "english": "sleepy",
+        "partOfSpeech": "adjective"
+      },
+      {
+        "japanese": "念のため",
+        "hiragana": "ねんのため",
+        "romaji": "nen no tame",
+        "english": "just in case",
+        "partOfSpeech": "adverb"
+      },
+      {
+        "japanese": "空く",
+        "hiragana": "あく",
+        "romaji": "aku",
+        "english": "to open up, become free",
+        "partOfSpeech": "verb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 28,
+    "title": "I was praised by the teacher",
+    "titleJapanese": "先生にほめられました",
+    "description": "Passive forms for reports, experiences, and affected situations",
+    "difficulty": 6,
+    "xpReward": 115,
+    "order": 28,
+    "isUnlocked": false,
+    "jlptLevel": "N3",
+    "grammarPoints": [
+      {
+        "title": "受け身形",
+        "explanation": "Use the passive form when the subject receives an action from another person or thing.",
+        "examples": [
+          "私は先生にほめられました。(I was praised by the teacher.)",
+          "この歌は世界中で歌われています。(This song is sung around the world.)"
+        ]
+      },
+      {
+        "title": "迷惑の受け身",
+        "explanation": "Use the affected passive to express inconvenience or emotional impact caused by an event.",
+        "examples": [
+          "電車で隣の人に足を踏まれました。(My foot was stepped on by the person next to me on the train.)",
+          "雨に降られて予定が変わりました。(I got caught in the rain and my plans changed.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "ほめる",
+        "hiragana": "ほめる",
+        "romaji": "homeru",
+        "english": "to praise",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "しかられる",
+        "hiragana": "しかられる",
+        "romaji": "shikarareru",
+        "english": "to be scolded",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "発表",
+        "hiragana": "はっぴょう",
+        "romaji": "happyou",
+        "english": "presentation, announcement",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "選ばれる",
+        "hiragana": "えらばれる",
+        "romaji": "erabareru",
+        "english": "to be chosen",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "盗まれる",
+        "hiragana": "ぬすまれる",
+        "romaji": "nusumareru",
+        "english": "to be stolen",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "被害",
+        "hiragana": "ひがい",
+        "romaji": "higai",
+        "english": "damage, harm",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "驚く",
+        "hiragana": "おどろく",
+        "romaji": "odoroku",
+        "english": "to be surprised",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "理由",
+        "hiragana": "りゆう",
+        "romaji": "riyuu",
+        "english": "reason",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 29,
+    "title": "I make the child eat vegetables",
+    "titleJapanese": "子どもに野菜を食べさせます",
+    "description": "Causative forms for making and letting people do things",
+    "difficulty": 7,
+    "xpReward": 115,
+    "order": 29,
+    "isUnlocked": false,
+    "jlptLevel": "N3",
+    "grammarPoints": [
+      {
+        "title": "使役形",
+        "explanation": "Use the causative form to express making someone do something or allowing them to do it.",
+        "examples": [
+          "先生は学生に作文を書かせました。(The teacher made the students write a composition.)",
+          "今日は子どもを早く寝させます。(Today I will make the child go to bed early.)"
+        ]
+      },
+      {
+        "title": "〜させてください",
+        "explanation": "Use 〜させてください when asking another person to allow you to do something.",
+        "examples": [
+          "その件は私に担当させてください。(Please let me handle that matter.)",
+          "少し考えさせてください。(Please let me think for a moment.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "世話する",
+        "hiragana": "せわする",
+        "romaji": "sewa suru",
+        "english": "to take care of",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "練習させる",
+        "hiragana": "れんしゅうさせる",
+        "romaji": "renshuu saseru",
+        "english": "to make someone practice",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "片づける",
+        "hiragana": "かたづける",
+        "romaji": "katazukeru",
+        "english": "to tidy up",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "任せる",
+        "hiragana": "まかせる",
+        "romaji": "makaseru",
+        "english": "to entrust",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "自由に",
+        "hiragana": "じゆうに",
+        "romaji": "jiyuu ni",
+        "english": "freely",
+        "partOfSpeech": "adverb"
+      },
+      {
+        "japanese": "無理に",
+        "hiragana": "むりに",
+        "romaji": "muri ni",
+        "english": "forcibly, against one’s will",
+        "partOfSpeech": "adverb"
+      },
+      {
+        "japanese": "相談する",
+        "hiragana": "そうだんする",
+        "romaji": "soudan suru",
+        "english": "to consult",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "責任",
+        "hiragana": "せきにん",
+        "romaji": "sekinin",
+        "english": "responsibility",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 30,
+    "title": "I take notes so I do not forget",
+    "titleJapanese": "忘れないようにメモします",
+    "description": "Using ように and ておく to prepare and act with purpose",
+    "difficulty": 7,
+    "xpReward": 120,
+    "order": 30,
+    "isUnlocked": false,
+    "jlptLevel": "N3",
+    "grammarPoints": [
+      {
+        "title": "〜ように",
+        "explanation": "Use 〜ように to express purpose or a hoped-for result such as avoiding forgetting or becoming able to do something.",
+        "examples": [
+          "聞こえるように大きな声で話してください。(Please speak loudly so that we can hear you.)",
+          "忘れないようにカレンダーに書きました。(I wrote it on the calendar so that I would not forget.)"
+        ]
+      },
+      {
+        "title": "〜ておく",
+        "explanation": "Use 〜ておく for advance preparation or for leaving something in a certain state.",
+        "examples": [
+          "旅行の前にホテルを予約しておきます。(I will reserve the hotel before the trip.)",
+          "あとで使うのでここに置いておいてください。(Please leave it here because we will use it later.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "メモする",
+        "hiragana": "めもする",
+        "romaji": "memo suru",
+        "english": "to take notes",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "準備する",
+        "hiragana": "じゅんびする",
+        "romaji": "junbi suru",
+        "english": "to prepare",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "予約する",
+        "hiragana": "よやくする",
+        "romaji": "yoyaku suru",
+        "english": "to reserve",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "確認する",
+        "hiragana": "かくにんする",
+        "romaji": "kakunin suru",
+        "english": "to confirm",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "忘れ物",
+        "hiragana": "わすれもの",
+        "romaji": "wasuremono",
+        "english": "forgotten item",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "目覚まし",
+        "hiragana": "めざまし",
+        "romaji": "mezamashi",
+        "english": "alarm clock",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "用意する",
+        "hiragana": "よういする",
+        "romaji": "youi suru",
+        "english": "to get ready",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "印刷する",
+        "hiragana": "いんさつする",
+        "romaji": "insatsu suru",
+        "english": "to print",
+        "partOfSpeech": "verb"
+      }
+    ]
+  }
+]

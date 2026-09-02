@@ -33,14 +33,15 @@ interface Lesson {
   vocabulary: Vocabulary[];
 }
 
-// The bundled lessons are adapted from Minna No Nihongo Book I (lessons 1-25).
-// That book is not aligned 1:1 with official JLPT syllabuses, so this mapping is
-// a defensible approximation rather than an authoritative JLPT certification:
-// lessons 1-15 cover the core elementary grammar generally associated with N5,
-// while lessons 16-25 introduce more complex structures (て-form requests,
-// giving/receiving, experience, volitional form, opinions) that trend toward N4.
+// Lessons 1-25 follow the original beginner roadmap, while lessons 26-40 add
+// original in-app intermediate and advanced content. The JLPT mapping is still
+// a defensible approximation rather than an authoritative certification syllabus.
 function deriveJlptLevel(lessonNumber: number): JlptLevel {
-  return lessonNumber <= 15 ? 'N5' : 'N4';
+  if (lessonNumber <= 15) return 'N5';
+  if (lessonNumber <= 25) return 'N4';
+  if (lessonNumber <= 30) return 'N3';
+  if (lessonNumber <= 35) return 'N2';
+  return 'N1';
 }
 
 function isJlptLevel(value: string): value is JlptLevel {
@@ -63,7 +64,10 @@ class LessonService {
         'lessons-6-10.json',      // Lessons 6-10
         'lessons-11-15.json',     // Lessons 11-15
         'lessons-16-20.json',     // Lessons 16-20
-        'lessons-21-25.json'      // Lessons 21-25
+        'lessons-21-25.json',     // Lessons 21-25
+        'lessons-26-30.json',     // Lessons 26-30
+        'lessons-31-35.json',     // Lessons 31-35
+        'lessons-36-40.json'      // Lessons 36-40
       ];
 
       const allLessons: Lesson[] = [];

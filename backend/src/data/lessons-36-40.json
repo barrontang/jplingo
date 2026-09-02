@@ -1,0 +1,437 @@
+[
+  {
+    "lessonNumber": 36,
+    "title": "Although it is difficult, I want to try",
+    "titleJapanese": "難しいものの挑戦したいです",
+    "description": "High-level contrastive expressions for nuanced argumentation",
+    "difficulty": 9,
+    "xpReward": 140,
+    "order": 36,
+    "isUnlocked": false,
+    "jlptLevel": "N1",
+    "grammarPoints": [
+      {
+        "title": "〜ものの",
+        "explanation": "Use 〜ものの in formal or written Japanese to contrast two facts with a nuanced \"although.\"",
+        "examples": [
+          "難しいものの挑戦したいです。(Although it is difficult, I want to take on the challenge.)",
+          "理解はしたものの、納得はしていません。(Although I understood it, I am not convinced.)"
+        ]
+      },
+      {
+        "title": "〜とはいえ",
+        "explanation": "Use 〜とはいえ when acknowledging one fact while introducing an important limitation or counterpoint.",
+        "examples": [
+          "春とはいえ、朝はまだ寒いです。(Though it is spring, mornings are still cold.)",
+          "有名とはいえ、誰でも知っているわけではありません。(Though it is famous, not everyone knows it.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "挑戦する",
+        "hiragana": "ちょうせんする",
+        "romaji": "chousen suru",
+        "english": "to challenge oneself",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "現状",
+        "hiragana": "げんじょう",
+        "romaji": "genjou",
+        "english": "current state",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "理想",
+        "hiragana": "りそう",
+        "romaji": "risou",
+        "english": "ideal",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "妥協",
+        "hiragana": "だきょう",
+        "romaji": "dakyou",
+        "english": "compromise",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "実績",
+        "hiragana": "じっせき",
+        "romaji": "jisseki",
+        "english": "record, achievements",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "評価",
+        "hiragana": "ひょうか",
+        "romaji": "hyouka",
+        "english": "evaluation",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "名目",
+        "hiragana": "めいもく",
+        "romaji": "meimoku",
+        "english": "name, pretext",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "実行",
+        "hiragana": "じっこう",
+        "romaji": "jikkou",
+        "english": "execution, carrying out",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 37,
+    "title": "The game continued despite the rain",
+    "titleJapanese": "雨にもかかわらず試合は続きました",
+    "description": "Advanced contrast and omission with formal written patterns",
+    "difficulty": 9,
+    "xpReward": 140,
+    "order": 37,
+    "isUnlocked": false,
+    "jlptLevel": "N1",
+    "grammarPoints": [
+      {
+        "title": "〜にもかかわらず",
+        "explanation": "Use 〜にもかかわらず to emphasize that the following result happened contrary to expectation.",
+        "examples": [
+          "体調が悪いにもかかわらず、彼は出勤しました。(Despite feeling ill, he went to work.)",
+          "説明を聞いたにもかかわらず、誤解したままでした。(Despite hearing the explanation, I still misunderstood.)"
+        ]
+      },
+      {
+        "title": "〜ことなく",
+        "explanation": "Use 〜ことなく to describe an action not being done while another situation continues.",
+        "examples": [
+          "彼女は迷うことなく答えました。(She answered without hesitation.)",
+          "誰にも頼ることなく問題を解決しました。(I solved the problem without relying on anyone.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "試合",
+        "hiragana": "しあい",
+        "romaji": "shiai",
+        "english": "match, game",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "継続する",
+        "hiragana": "けいぞくする",
+        "romaji": "keizoku suru",
+        "english": "to continue",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "中断する",
+        "hiragana": "ちゅうだんする",
+        "romaji": "chuudan suru",
+        "english": "to interrupt, suspend",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "裏切る",
+        "hiragana": "うらぎる",
+        "romaji": "uragiru",
+        "english": "to betray",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "犠牲",
+        "hiragana": "ぎせい",
+        "romaji": "gisei",
+        "english": "sacrifice",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "兆し",
+        "hiragana": "きざし",
+        "romaji": "kizashi",
+        "english": "sign, indication",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "冷静",
+        "hiragana": "れいせい",
+        "romaji": "reisei",
+        "english": "calm, composed",
+        "partOfSpeech": "adjective"
+      },
+      {
+        "japanese": "依然として",
+        "hiragana": "いぜんとして",
+        "romaji": "izen to shite",
+        "english": "still, as before",
+        "partOfSpeech": "adverb"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 38,
+    "title": "I have no choice but to go",
+    "titleJapanese": "行かざるをえません",
+    "description": "Advanced obligation and emotion with classical negative-based forms",
+    "difficulty": 9,
+    "xpReward": 145,
+    "order": 38,
+    "isUnlocked": false,
+    "jlptLevel": "N1",
+    "grammarPoints": [
+      {
+        "title": "〜ざるをえない",
+        "explanation": "Use 〜ざるをえない when circumstances force you to take an action against your preference.",
+        "examples": [
+          "予算が足りないので計画を見直さざるをえません。(We have no choice but to review the plan because the budget is insufficient.)",
+          "その状況では受け入れざるをえないでしょう。(In that situation, we will have no choice but to accept it.)"
+        ]
+      },
+      {
+        "title": "〜ずにはいられない",
+        "explanation": "Use 〜ずにはいられない when a feeling naturally makes the speaker do something.",
+        "examples": [
+          "彼の努力を見ると応援せずにはいられません。(When I see his effort, I cannot help cheering for him.)",
+          "その映画を思い出すと涙が出ずにはいられません。(When I remember that movie, I cannot help crying.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "義務",
+        "hiragana": "ぎむ",
+        "romaji": "gimu",
+        "english": "obligation",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "衝動",
+        "hiragana": "しょうどう",
+        "romaji": "shoudou",
+        "english": "impulse",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "本音",
+        "hiragana": "ほんね",
+        "romaji": "honne",
+        "english": "true feelings",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "建前",
+        "hiragana": "たてまえ",
+        "romaji": "tatemae",
+        "english": "public stance",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "納得する",
+        "hiragana": "なっとくする",
+        "romaji": "nattoku suru",
+        "english": "to be convinced",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "我慢する",
+        "hiragana": "がまんする",
+        "romaji": "gaman suru",
+        "english": "to endure",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "断念する",
+        "hiragana": "だんねんする",
+        "romaji": "dannen suru",
+        "english": "to abandon",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "圧力",
+        "hiragana": "あつりょく",
+        "romaji": "atsuryoku",
+        "english": "pressure",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 39,
+    "title": "It may end in failure",
+    "titleJapanese": "失敗しかねません",
+    "description": "Risk and limitation with concise advanced written expressions",
+    "difficulty": 9,
+    "xpReward": 145,
+    "order": 39,
+    "isUnlocked": false,
+    "jlptLevel": "N1",
+    "grammarPoints": [
+      {
+        "title": "〜かねない",
+        "explanation": "Use 〜かねない to warn that a negative result is quite possible if the current trend continues.",
+        "examples": [
+          "失敗しかねません。(It may well end in failure.)",
+          "その発言は誤解を招きかねません。(That remark could invite misunderstanding.)"
+        ]
+      },
+      {
+        "title": "〜にすぎない",
+        "explanation": "Use 〜にすぎない to emphasize that something should not be overestimated.",
+        "examples": [
+          "彼の説明は一つの意見にすぎません。(His explanation is nothing more than one opinion.)",
+          "今回の成功は通過点にすぎないと考えています。(I think this success is no more than a milestone.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "失敗",
+        "hiragana": "しっぱい",
+        "romaji": "shippai",
+        "english": "failure",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "過信する",
+        "hiragana": "かしんする",
+        "romaji": "kashin suru",
+        "english": "to be overconfident",
+        "partOfSpeech": "verb"
+      },
+      {
+        "japanese": "単なる",
+        "hiragana": "たんなる",
+        "romaji": "tannaru",
+        "english": "mere, nothing but",
+        "partOfSpeech": "adjective"
+      },
+      {
+        "japanese": "手段",
+        "hiragana": "しゅだん",
+        "romaji": "shudan",
+        "english": "means, method",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "誤差",
+        "hiragana": "ごさ",
+        "romaji": "gosa",
+        "english": "margin of error",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "油断",
+        "hiragana": "ゆだん",
+        "romaji": "yudan",
+        "english": "carelessness",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "危機",
+        "hiragana": "きき",
+        "romaji": "kiki",
+        "english": "crisis",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "兆候",
+        "hiragana": "ちょうこう",
+        "romaji": "choukou",
+        "english": "sign, symptom",
+        "partOfSpeech": "noun"
+      }
+    ]
+  },
+  {
+    "lessonNumber": 40,
+    "title": "Human beings are apt to forget",
+    "titleJapanese": "人間というものは忘れやすいです",
+    "description": "Abstract and essay-style expressions for N1-level nuance",
+    "difficulty": 10,
+    "xpReward": 150,
+    "order": 40,
+    "isUnlocked": false,
+    "jlptLevel": "N1",
+    "grammarPoints": [
+      {
+        "title": "〜というものだ",
+        "explanation": "Use 〜というものだ to express a general principle or a firm evaluative statement.",
+        "examples": [
+          "人間というものは忘れやすいです。(Human beings are apt to forget.)",
+          "約束を守ってこそ信頼というものです。(You could say trust exists only when promises are kept.)"
+        ]
+      },
+      {
+        "title": "〜に至っては",
+        "explanation": "Use 〜に至っては to spotlight one especially relevant case among several topics.",
+        "examples": [
+          "品質はもちろん、デザインに至っては他社より優れています。(Not only the quality, but when it comes to design, it surpasses other companies.)",
+          "小学生でも分かる内容で、大人に至っては説明不要です。(Even elementary students can understand it, and when it comes to adults, no explanation is needed.)"
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "japanese": "本質",
+        "hiragana": "ほんしつ",
+        "romaji": "honshitsu",
+        "english": "essence",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "観点",
+        "hiragana": "かんてん",
+        "romaji": "kanten",
+        "english": "point of view",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "価値観",
+        "hiragana": "かちかん",
+        "romaji": "kachikan",
+        "english": "values, sense of values",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "哲学",
+        "hiragana": "てつがく",
+        "romaji": "tetsugaku",
+        "english": "philosophy",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "文脈",
+        "hiragana": "ぶんみゃく",
+        "romaji": "bunmyaku",
+        "english": "context",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "極端",
+        "hiragana": "きょくたん",
+        "romaji": "kyokutan",
+        "english": "extreme",
+        "partOfSpeech": "adjective"
+      },
+      {
+        "japanese": "議論",
+        "hiragana": "ぎろん",
+        "romaji": "giron",
+        "english": "discussion, argument",
+        "partOfSpeech": "noun"
+      },
+      {
+        "japanese": "検証する",
+        "hiragana": "けんしょうする",
+        "romaji": "kenshou suru",
+        "english": "to verify, examine",
+        "partOfSpeech": "verb"
+      }
+    ]
+  }
+]
