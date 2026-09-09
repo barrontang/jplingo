@@ -105,31 +105,28 @@ The API will be available at `http://localhost:3000`
 
 ```
 jplingo/
-├── frontend/                 # React Native Expo app
-│   ├── App.tsx              # Main app with quiz system
-│   ├── src/
-│   │   ├── screens/         # Screen components
-│   │   ├── navigation/      # Navigation setup
-│   │   ├── services/        # API services
-│   │   ├── store/           # Redux store
-│   │   └── types/           # TypeScript types
+├── frontend/                   # React Native Expo app
+│   ├── App.tsx                 # Entire UI + game logic (quiz, hearts, XP, quest)
+│   ├── src/data/advancedLessons.ts   # N3-N1 lesson content used by App.tsx
+│   ├── __tests__/              # Frontend snapshot tests
 │   └── package.json
 │
-├── backend/                  # Express.js API server
+├── backend/                    # Express.js API server
 │   ├── src/
-│   │   ├── controllers/     # Route controllers
-│   │   ├── routes/          # API routes
-│   │   ├── services/        # Business logic
-│   │   ├── middleware/      # Express middleware
-│   │   ├── data/            # Lesson JSON data
-│   │   └── index.ts         # Server entry point
-│   ├── prisma/              # Database schema
+│   │   ├── controllers/         # Route controllers
+│   │   ├── routes/              # API routes
+│   │   ├── services/            # Lesson loader + in-memory user store
+│   │   ├── middleware/          # JWT auth + error handler
+│   │   ├── data/                # Lesson JSON data (40 lessons, N5->N1)
+│   │   └── index.ts             # Server entry point
+│   ├── prisma/                 # Database schema + migrations
+│   ├── Dockerfile              # Build + run the API container
 │   └── package.json
 │
-├── content/                  # Additional lesson content
-├── database/                 # Database initialization
-├── docs/                     # Documentation
-└── docker-compose.yml        # Docker setup
+├── database/                   # PostgreSQL init (Prisma owns the schema)
+├── docs/                       # Documentation (api, setup, structure, contributing)
+├── package.json                # Root orchestration scripts
+└── docker-compose.yml          # PostgreSQL + Redis for local dev
 ```
 
 ## 🎮 How to Use
@@ -148,15 +145,15 @@ jplingo/
 - **React Native** 0.73 - Cross-platform mobile framework
 - **Expo** 54 - Development and build tooling
 - **TypeScript** - Type-safe JavaScript
-- **React Navigation** - Screen navigation
-- **Redux Toolkit** - State management
+- **React (useState)** - UI + in-session game state (a single `App.tsx` screen state-machine; the earlier Redux/React-Navigation folders were unused stubs and were removed)
 
 ### Backend
 - **Node.js** - JavaScript runtime
 - **Express.js** - Web framework
 - **TypeScript** - Type-safe JavaScript
-- **Prisma** - Database ORM
-- **PostgreSQL** - Database (optional)
+- **jsonwebtoken / bcryptjs** - JWT auth + password hashing (in-memory `userStore` demo fallback)
+- **Prisma + PostgreSQL** - Database ORM (planned; migrations present, not yet wired to controllers)
+- **Redis** - Optional cache/session layer (provisioned via `docker-compose`)
 
 ## 📱 Screenshots
 

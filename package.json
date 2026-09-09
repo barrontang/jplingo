@@ -1,0 +1,21 @@
+{
+  "name": "jplingo",
+  "version": "1.0.0",
+  "description": "JPLingo - Duolingo-style Japanese learning app (JLPT N5->N1).",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run android",
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "build:backend": "cd backend && npm run build",
+    "build": "npm run build:backend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test": "npm run test:backend && npm run test:frontend",
+    "start:backend": "cd backend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
