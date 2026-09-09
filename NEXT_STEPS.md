@@ -227,9 +227,9 @@ npm run prisma:studio
 
 Once everything is running, you can:
 
-1. Check existing content: `content/lessons/lesson-1.json`
-2. Add more lessons following the same format
-3. Run seed script to populate database
+1. Check existing content: `backend/src/data/lessons-1.json` (API/tests) and `frontend/src/data/advancedLessons.ts` (app)
+2. Add more lessons following the same JSON format in **both** content sources
+3. Apply DB migrations (`npm run migrate`) — lesson seeding comes from the JSON `data/` files
 4. Test in the app!
 
 ---

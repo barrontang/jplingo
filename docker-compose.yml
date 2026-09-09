@@ -1,0 +1,42 @@
+# JPLingo infrastructure: PostgreSQL + Redis for local development.
+# Start:   docker-compose up -d
+# Stop:    docker-compose down
+# Nuke:    docker-compose down -v   (drops volumes / data)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: jplingo-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: jplingo
+      POSTGRES_PASSWORD: jplingo
+      POSTGRES_DB: jplingo_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - jplingo_pgdata:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jplingo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: jplingo-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - jplingo_redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jplingo_pgdata:
+  jplingo_redisdata:
