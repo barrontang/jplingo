@@ -12,7 +12,6 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "migrate": "prisma migrate dev",
     "migrate:prod": "prisma migrate deploy",
-    "seed": "ts-node src/database/seed.ts",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio"
   },

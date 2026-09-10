@@ -1,6 +1,15 @@
 # JPLingo - Japanese Learning App
 
-> A Duolingo-style Japanese learning application based on **Minna No Nihongo: Beginner 1**
+> [!NOTE]
+> **Historical planning doc.** This file predates the current codebase. Treat
+> `README.md` as the source of truth. Two things here are superseded: the frontend
+> no longer uses Redux Toolkit / React Navigation (the app is a single
+> `App.tsx` screen state-machine), and the `content/` directory was removed
+> (lesson JSON now lives in `backend/src/data/*` and `frontend/src/data/advancedLessons.ts`).
+>
+> A Duolingo-style Japanese learning application inspired by the **Minna No Nihongo**
+> beginner progression (the in-app content itself is original — see README →
+> *Content Attribution*).
 
 ## Project Overview
 

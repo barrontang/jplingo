@@ -1273,7 +1273,7 @@ const App = () => {
         </ScrollView>
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>Backend: localhost:3000 ✓</Text>
+          <Text style={styles.footerText}>JPLingo · runs fully offline — no backend required</Text>
         </View>
       </SafeAreaView>
     );
